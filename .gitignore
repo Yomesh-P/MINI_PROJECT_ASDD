@@ -41,6 +41,8 @@ coverage/
 # MLflow and Airflow local runs
 mlruns/
 **/mlruns/
+*.db
+**/mlflow.db
 airflow/logs/
 airflow/airflow.db
 
