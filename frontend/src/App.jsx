@@ -28,20 +28,20 @@ function MainApp() {
 
       <footer style={{
         borderTop: '1px solid var(--border-subtle)',
-        padding: '2rem 1.5rem',
+        padding: '2.5rem 1.75rem',
         textAlign: 'center',
-        background: 'rgba(11, 15, 25, 0.95)',
-        fontSize: '0.85rem',
+        background: '#ffffff',
+        fontSize: '0.88rem',
         color: 'var(--text-muted)',
       }}>
-        <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-          <div>
-            <strong>Smart Cricket Tournament Tracker</strong> • TE AI & DS, Sem V
+        <div style={{ maxWidth: '1320px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.25rem' }}>
+          <div style={{ fontWeight: 600, color: 'var(--text-main)' }}>
+            🏏 <strong>Smart Cricket Tournament Tracker</strong> • White Bento Grid Edition
           </div>
-          <div style={{ display: 'flex', gap: '1.5rem', fontSize: '0.8rem' }}>
+          <div style={{ display: 'flex', gap: '1.5rem', fontSize: '0.82rem', flexWrap: 'wrap' }}>
             <span>DevOps: Git • Docker • K3s • Jenkins • Ansible</span>
             <span>MLOps: FastAPI • MLflow • Apache Airflow</span>
-            <span>Monitoring: Prometheus • Grafana</span>
+            <span>Observability: Prometheus • Grafana</span>
           </div>
         </div>
       </footer>

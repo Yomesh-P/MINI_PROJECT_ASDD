@@ -18,7 +18,6 @@ export default function PredictionsPage() {
         setSelectedPlayer(pRes.data.data[0]._id);
       }
       if (tRes.data.success && tRes.data.data.length > 0) {
-        // Fetch teams
         tournamentAPI.getById(tRes.data.data[0]._id).then((detail) => {
           if (detail.data.success) {
             setTeams(detail.data.data.teams);
@@ -55,16 +54,16 @@ export default function PredictionsPage() {
   return (
     <div>
       <div style={{ marginBottom: '2rem' }}>
-        <h1 style={{ fontSize: '2rem', marginBottom: '0.25rem' }}>AI Match Performance Predictor</h1>
+        <h1 style={{ fontSize: '2rem', marginBottom: '0.25rem', color: 'var(--text-main)' }}>AI Match Performance Predictor</h1>
         <p style={{ color: 'var(--text-muted)' }}>
           MLOps-driven forecasting: Scikit-learn Random Forest model tracked via MLflow & retrained weekly via Apache Airflow
         </p>
       </div>
 
-      <div className="card" style={{ marginBottom: '2rem' }}>
-        <h3 style={{ fontSize: '1.2rem', marginBottom: '1.25rem' }}>Simulation Parameters</h3>
+      <div className="bento-card" style={{ marginBottom: '2rem' }}>
+        <h3 style={{ fontSize: '1.25rem', marginBottom: '1.5rem', color: 'var(--text-main)' }}>Simulation Parameters</h3>
         <form onSubmit={handleRunPrediction}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem', marginBottom: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', marginBottom: '1.75rem' }}>
             <div className="form-group">
               <label className="form-label">Select Player / Batter</label>
               <select
@@ -125,11 +124,11 @@ export default function PredictionsPage() {
       )}
 
       {/* MLOps Architecture Explanatory Callout */}
-      <div className="card" style={{ background: 'rgba(0,0,0,0.25)', border: '1px solid var(--border-subtle)' }}>
-        <h3 style={{ fontSize: '1rem', color: 'var(--accent-sapphire)', marginBottom: '0.5rem' }}>
+      <div className="bento-card" style={{ background: '#f8fafc', border: '1px solid var(--border-subtle)' }}>
+        <h3 style={{ fontSize: '1.05rem', color: 'var(--accent-sapphire)', marginBottom: '0.65rem' }}>
           🧠 How This Model Operates (LO5 Architecture):
         </h3>
-        <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>
+        <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: '1.7' }}>
           1. The Node.js Express backend extracts a rolling 5-match history from <code>PlayerMatchStat</code> along with opposition bowling economy and venue score indices.<br />
           2. The payload is sent via HTTP POST to the Python FastAPI microservice (<code>/predict/runs</code> and <code>/predict/pom</code>).<br />
           3. FastAPI evaluates the feature vector using a RandomForest Regressor and Classifier loaded directly from the MLflow Model Registry.<br />

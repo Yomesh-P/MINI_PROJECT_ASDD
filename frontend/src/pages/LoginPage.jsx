@@ -23,18 +23,20 @@ export default function LoginPage({ onLoginSuccess }) {
   };
 
   return (
-    <div style={{ maxWidth: '440px', margin: '3rem auto' }}>
-      <div className="card" style={{ padding: '2.5rem' }}>
+    <div style={{ maxWidth: '460px', margin: '3.5rem auto' }}>
+      <div className="bento-card" style={{ padding: '2.75rem 2.25rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>🏏</div>
-          <h2 style={{ fontSize: '1.75rem', marginBottom: '0.25rem' }}>Admin Access</h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+          <div style={{ width: 56, height: 56, borderRadius: 'var(--radius-md)', background: 'var(--accent-emerald-light)', color: 'var(--accent-emerald)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem', marginBottom: '1rem', border: '1px solid var(--accent-emerald-border)' }}>
+            🏏
+          </div>
+          <h2 style={{ fontSize: '1.85rem', marginBottom: '0.35rem', color: 'var(--text-main)' }}>Admin Sign In</h2>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem' }}>
             Tournament Scorer & Management Console (JWT Authenticated)
           </p>
         </div>
 
         {error && (
-          <div style={{ background: 'rgba(239, 68, 68, 0.2)', border: '1px solid rgba(239, 68, 68, 0.4)', padding: '0.75rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.25rem', color: '#f87171', fontSize: '0.85rem' }}>
+          <div style={{ background: 'var(--accent-ruby-light)', border: '1px solid #fecaca', padding: '0.85rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.25rem', color: 'var(--accent-ruby)', fontSize: '0.88rem' }}>
             {error}
           </div>
         )}
@@ -65,15 +67,15 @@ export default function LoginPage({ onLoginSuccess }) {
           <button
             type="submit"
             className="btn btn-primary"
-            style={{ width: '100%', justifyContent: 'center', marginTop: '1rem' }}
+            style={{ width: '100%', justifyContent: 'center', marginTop: '1rem', padding: '0.8rem' }}
             disabled={loading}
           >
             {loading ? 'Authenticating...' : 'Sign In to Admin Console'}
           </button>
         </form>
 
-        <div style={{ marginTop: '1.75rem', padding: '1rem', background: 'rgba(255,255,255,0.02)', borderRadius: 'var(--radius-sm)', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-          <div><strong>Demo Admin Credentials:</strong></div>
+        <div style={{ marginTop: '2rem', padding: '1.1rem', background: 'var(--bg-subtle)', borderRadius: 'var(--radius-sm)', fontSize: '0.82rem', color: 'var(--text-muted)', border: '1px solid var(--border-subtle)' }}>
+          <div style={{ fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.25rem' }}>Demo Admin Credentials:</div>
           <div>Email: <code>admin@cricket.org</code></div>
           <div>Password: <code>admin123</code></div>
         </div>

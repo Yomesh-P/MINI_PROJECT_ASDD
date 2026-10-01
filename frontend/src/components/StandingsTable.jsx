@@ -2,14 +2,14 @@ import React from 'react';
 
 export default function StandingsTable({ standings = [], tournamentName = 'Mumbai Premier League 2025' }) {
   return (
-    <div className="card">
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+    <div className="bento-card">
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.75rem', flexWrap: 'wrap', gap: '0.75rem' }}>
         <div>
-          <h2 style={{ fontSize: '1.4rem', marginBottom: '0.25rem' }}>Tournament Standings</h2>
-          <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{tournamentName} • Automatic NRR Calculation</p>
+          <h2 style={{ fontSize: '1.5rem', marginBottom: '0.25rem', color: 'var(--text-main)' }}>Official Standings & Table</h2>
+          <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>{tournamentName} • Dynamic Net Run Rate (NRR) Engine</p>
         </div>
-        <span style={{ fontSize: '0.75rem', background: 'rgba(59, 130, 246, 0.15)', color: '#60a5fa', padding: '0.3rem 0.6rem', borderRadius: 'var(--radius-sm)' }}>
-          Top 2 Qualify for Finals
+        <span style={{ fontSize: '0.78rem', background: 'var(--accent-sapphire-light)', color: 'var(--accent-sapphire)', border: '1px solid #bfdbfe', padding: '0.35rem 0.85rem', borderRadius: 'var(--radius-full)', fontWeight: 700 }}>
+          Top 2 Advance to Championship Final
         </span>
       </div>
 
@@ -17,40 +17,42 @@ export default function StandingsTable({ standings = [], tournamentName = 'Mumba
         <table className="custom-table">
           <thead>
             <tr>
-              <th style={{ width: '60px' }}>Rank</th>
-              <th>Team</th>
+              <th style={{ width: '65px' }}>Rank</th>
+              <th>Club</th>
               <th style={{ textAlign: 'center' }}>P</th>
               <th style={{ textAlign: 'center' }}>W</th>
               <th style={{ textAlign: 'center' }}>L</th>
               <th style={{ textAlign: 'center' }}>T</th>
-              <th style={{ textAlign: 'center' }}>Pts</th>
+              <th style={{ textAlign: 'center' }}>Points</th>
               <th style={{ textAlign: 'right' }}>Net Run Rate (NRR)</th>
             </tr>
           </thead>
           <tbody>
             {standings.length === 0 ? (
               <tr>
-                <td colSpan="8" style={{ textAlign: 'center', color: 'var(--text-muted)', padding: '2rem' }}>
-                  No standings data available yet. Complete matches to generate standings.
+                <td colSpan="8" style={{ textAlign: 'center', color: 'var(--text-muted)', padding: '3rem' }}>
+                  No standings data available yet. Complete matches to generate live standings.
                 </td>
               </tr>
             ) : (
               standings.map((team, idx) => (
                 <tr key={team.teamId || idx}>
-                  <td style={{ fontWeight: 700, color: idx < 2 ? 'var(--accent-emerald)' : 'var(--text-muted)' }}>
+                  <td style={{ fontWeight: 800, color: idx < 2 ? 'var(--accent-emerald)' : 'var(--text-muted)', fontSize: '1.05rem', fontFamily: 'var(--font-heading)' }}>
                     #{team.rank || idx + 1}
                   </td>
                   <td>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <span style={{ fontWeight: 600 }}>{team.teamName}</span>
-                      <span style={{ fontSize: '0.75rem', color: 'var(--text-faint)' }}>({team.shortName})</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                      <span style={{ fontWeight: 700, fontSize: '0.98rem' }}>{team.teamName}</span>
+                      <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', background: 'var(--bg-subtle)', padding: '0.15rem 0.45rem', borderRadius: 'var(--radius-xs)', fontWeight: 600 }}>
+                        {team.shortName}
+                      </span>
                     </div>
                   </td>
-                  <td style={{ textAlign: 'center' }}>{team.played}</td>
-                  <td style={{ textAlign: 'center', color: 'var(--accent-emerald)', fontWeight: 600 }}>{team.won}</td>
-                  <td style={{ textAlign: 'center', color: '#f87171' }}>{team.lost}</td>
-                  <td style={{ textAlign: 'center' }}>{team.tied}</td>
-                  <td style={{ textAlign: 'center', fontWeight: 800, fontSize: '1.1rem', color: '#fff' }}>
+                  <td style={{ textAlign: 'center', fontWeight: 600 }}>{team.played}</td>
+                  <td style={{ textAlign: 'center', color: 'var(--accent-emerald)', fontWeight: 700 }}>{team.won}</td>
+                  <td style={{ textAlign: 'center', color: 'var(--accent-ruby)', fontWeight: 600 }}>{team.lost}</td>
+                  <td style={{ textAlign: 'center', color: 'var(--text-muted)' }}>{team.tied}</td>
+                  <td style={{ textAlign: 'center', fontWeight: 800, fontSize: '1.25rem', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
                     {team.points}
                   </td>
                   <td style={{ textAlign: 'right' }}>
