@@ -1,0 +1,15 @@
+---
+- name: Provision AWS EC2 Infrastructure for Smart Cricket Tracker
+  hosts: cricket_servers
+  become: yes
+  gather_facts: yes
+
+  vars:
+    k3s_version: "v1.28.2+k3s1"
+    jenkins_port: 8080
+
+  roles:
+    - common
+    - docker
+    - jenkins
+    - k3s

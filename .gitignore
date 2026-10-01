@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+*$py.class
+.venv
+env/
+venv/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Build outputs
+dist/
+build/
+.cache/
+
+# Test and Coverage
+coverage/
+.pytest_cache/
+*.log
+
+# MLflow and Airflow local runs
+mlruns/
+airflow/logs/
+airflow/airflow.db
+
+# OS Files
+.DS_Store
+Thumbs.db

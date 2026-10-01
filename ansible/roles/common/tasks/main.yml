@@ -1,0 +1,38 @@
+---
+- name: Update apt cache and upgrade system packages
+  apt:
+    update_cache: yes
+    upgrade: dist
+    cache_valid_time: 3600
+
+- name: Install prerequisite baseline utilities
+  apt:
+    name:
+      - curl
+      - wget
+      - git
+      - ufw
+      - apt-transport-https
+      - ca-certificates
+      - gnupg
+      - lsb-release
+      - htop
+      - net-tools
+    state: present
+
+- name: Configure UFW firewall rules for Cricket Tracker stack
+  ufw:
+    rule: allow
+    port: "{{ item }}"
+    proto: tcp
+  loop:
+    - "22"    # SSH
+    - "80"    # HTTP
+    - "443"   # HTTPS
+    - "8080"  # Jenkins
+    - "6443"  # K3s API
+    - "3000"  # Web App
+    - "5000"  # Backend API
+    - "8000"  # ML Service
+    - "9090"  # Prometheus
+    - "3001"  # Grafana

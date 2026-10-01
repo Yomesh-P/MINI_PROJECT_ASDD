@@ -1,0 +1,32 @@
+---
+- name: Check if K3s is already installed
+  stat:
+    path: /usr/local/bin/k3s
+  register: k3s_binary
+
+- name: Install K3s lightweight Kubernetes cluster
+  shell: curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--write-kubeconfig-mode 644" sh -
+  when: not k3s_binary.stat.exists
+
+- name: Ensure K3s service is active
+  systemd:
+    name: k3s
+    state: started
+    enabled: yes
+
+- name: Ensure .kube directory exists in user home
+  file:
+    path: "/home/{{ ansible_user | default('ubuntu') }}/.kube"
+    state: directory
+    owner: "{{ ansible_user | default('ubuntu') }}"
+    group: "{{ ansible_user | default('ubuntu') }}"
+    mode: '0755'
+
+- name: Copy K3s kubeconfig to user .kube directory
+  copy:
+    src: /etc/rancher/k3s/k3s.yaml
+    dest: "/home/{{ ansible_user | default('ubuntu') }}/.kube/config"
+    remote_src: yes
+    owner: "{{ ansible_user | default('ubuntu') }}"
+    group: "{{ ansible_user | default('ubuntu') }}"
+    mode: '0600'

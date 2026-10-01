@@ -1,0 +1,120 @@
+services:
+  # ==========================================
+  # 1. MongoDB Database
+  # ==========================================
+  mongo:
+    image: mongo:7.0
+    container_name: cricket-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - cricket-net
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ==========================================
+  # 2. Node.js / Express REST API
+  # ==========================================
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: cricket-backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      - MONGO_URI=mongodb://mongo:27017/cricket_tracker
+      - JWT_SECRET=supersecretcricketjwtkey2025te_aids
+      - JWT_EXPIRE=24h
+      - ML_SERVICE_URL=http://ml-api:8000
+    depends_on:
+      mongo:
+        condition: service_healthy
+    networks:
+      - cricket-net
+
+  # ==========================================
+  # 3. Python FastAPI ML Microservice (LO5)
+  # ==========================================
+  ml-api:
+    build:
+      context: ./ml-service
+      dockerfile: Dockerfile
+    container_name: cricket-ml-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5001
+      - PORT=8000
+    depends_on:
+      - mlflow
+    networks:
+      - cricket-net
+
+  # ==========================================
+  # 4. React Frontend (Nginx Production)
+  # ==========================================
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: cricket-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - cricket-net
+
+  # ==========================================
+  # 5. MLflow Tracking Server (LO5)
+  # ==========================================
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.16.2
+    container_name: cricket-mlflow
+    restart: unless-stopped
+    ports:
+      - "5001:5000"
+    volumes:
+      - mlflow_data:/mlflow
+    command: mlflow server --backend-store-uri sqlite:////mlflow/mlflow.db --default-artifact-root /mlflow/artifacts --host 0.0.0.0 --port 5000
+    networks:
+      - cricket-net
+
+  # ==========================================
+  # 6. Apache Airflow Standalone (LO5 Scheduled Retrain)
+  # ==========================================
+  airflow:
+    image: apache/airflow:2.9.3-python3.11
+    container_name: cricket-airflow
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__CORE__DAGS_FOLDER=/opt/airflow/dags
+      - ML_SERVICE_URL=http://ml-api:8000
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+    command: standalone
+    networks:
+      - cricket-net
+
+volumes:
+  mongo_data:
+  mlflow_data:
+
+networks:
+  cricket-net:
+    driver: bridge
