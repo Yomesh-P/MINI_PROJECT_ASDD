@@ -104,22 +104,22 @@ export default function AdminPage({ onGoToLogin }) {
           <h2 style={{ fontSize: '1.4rem', marginBottom: '1.25rem', color: 'var(--text-main)' }}>Manage & Score Matches</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {matches.map((m) => (
-              <div key={m._id} className="bento-card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem' }}>
+              <div key={m._id} className="card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.5rem' }}>
                 <div>
-                  <div style={{ fontWeight: 700, fontSize: '1.05rem', color: 'var(--text-main)' }}>
+                  <div style={{ fontWeight: 800, fontSize: '1.15rem', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
                     {m.teamA?.shortName} vs {m.teamB?.shortName}
                   </div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
                     Status: <strong style={{ color: m.status === 'live' ? 'var(--accent-ruby)' : 'var(--accent-emerald)', textTransform: 'uppercase' }}>{m.status}</strong> • {m.venue}
                   </div>
-                  <div style={{ fontSize: '0.9rem', color: 'var(--accent-emerald)', marginTop: '0.25rem', fontWeight: 700 }}>
+                  <div style={{ fontSize: '1.05rem', color: 'var(--accent-emerald)', marginTop: '0.35rem', fontWeight: 800, fontFamily: 'var(--font-heading)' }}>
                     {m.scoreA?.runs}/{m.scoreA?.wickets} vs {m.scoreB?.runs}/{m.scoreB?.wickets}
                   </div>
                 </div>
 
                 <button
                   className="btn btn-primary"
-                  style={{ padding: '0.45rem 1rem', fontSize: '0.85rem' }}
+                  style={{ padding: '0.55rem 1.15rem', fontSize: '0.85rem' }}
                   onClick={() => setScorerMatch(m)}
                 >
                   ⚡ Score Match
@@ -131,19 +131,19 @@ export default function AdminPage({ onGoToLogin }) {
 
         {/* Schedule New Match Form */}
         <div>
-          <div className="bento-card">
+          <div className="card">
             <h2 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', color: 'var(--text-main)' }}>Schedule New Match</h2>
 
             {msg && (
               <div style={{
-                background: msg.includes('successfully') ? 'var(--accent-emerald-light)' : 'var(--accent-ruby-light)',
-                border: `1px solid ${msg.includes('successfully') ? 'var(--accent-emerald-border)' : '#fca5a5'}`,
-                padding: '0.85rem',
+                background: msg.includes('successfully') ? 'var(--accent-emerald-clay)' : 'var(--accent-ruby-clay)',
+                boxShadow: msg.includes('successfully') ? 'var(--accent-emerald-shadow)' : 'var(--accent-ruby-shadow)',
+                padding: '0.85rem 1.25rem',
                 borderRadius: 'var(--radius-sm)',
-                marginBottom: '1.25rem',
+                marginBottom: '1.5rem',
                 fontSize: '0.88rem',
                 color: msg.includes('successfully') ? 'var(--accent-emerald)' : 'var(--accent-ruby)',
-                fontWeight: 600,
+                fontWeight: 700,
               }}>
                 {msg}
               </div>

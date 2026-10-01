@@ -88,17 +88,18 @@ export default function PlayersPage() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
                 <div style={{
-                  width: 68,
-                  height: 68,
+                  width: 72,
+                  height: 72,
                   borderRadius: 'var(--radius-md)',
-                  background: 'var(--accent-emerald)',
+                  background: '#ffffff',
+                  color: 'var(--accent-emerald)',
+                  boxShadow: 'var(--clay-tile-shadow)',
+                  border: '1px solid rgba(255, 255, 255, 0.95)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '1.8rem',
+                  fontSize: '2.1rem',
                   fontWeight: 800,
-                  color: '#ffffff',
-                  boxShadow: '0 4px 12px rgba(5, 150, 105, 0.25)',
                   fontFamily: 'var(--font-heading)',
                 }}>
                   {playerData.jerseyNumber || 18}
@@ -106,15 +107,15 @@ export default function PlayersPage() {
                 <div>
                   <h2 style={{ fontSize: '1.85rem', marginBottom: '0.25rem', color: 'var(--text-main)' }}>{playerData.name}</h2>
                   <div style={{ display: 'flex', gap: '0.75rem', fontSize: '0.88rem', color: 'var(--text-muted)', flexWrap: 'wrap' }}>
-                    <span style={{ fontWeight: 600, color: 'var(--text-main)' }}>🛡️ {playerData.teamId?.name}</span>
+                    <span style={{ fontWeight: 700, color: 'var(--text-main)' }}>🛡️ {playerData.teamId?.name}</span>
                     <span>•</span>
-                    <span style={{ textTransform: 'capitalize' }}>🏏 {playerData.role}</span>
+                    <span style={{ textTransform: 'capitalize', fontWeight: 600 }}>🏏 {playerData.role}</span>
                     <span>•</span>
-                    <span>Bat: {playerData.battingStyle}</span>
+                    <span>Bat: <strong>{playerData.battingStyle}</strong></span>
                     {playerData.bowlingStyle !== 'none' && (
                       <>
                         <span>•</span>
-                        <span>Bowl: {playerData.bowlingStyle}</span>
+                        <span>Bowl: <strong>{playerData.bowlingStyle}</strong></span>
                       </>
                     )}
                   </div>
@@ -134,45 +135,45 @@ export default function PlayersPage() {
             <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-              gap: '1rem',
-              marginTop: '1.75rem',
-              borderTop: '1px solid var(--border-subtle)',
-              paddingTop: '1.5rem',
+              gap: '1.25rem',
+              marginTop: '2rem',
+              borderTop: '2px solid #f1f5f9',
+              paddingTop: '1.75rem',
               textAlign: 'center',
             }}>
-              <div style={{ background: 'var(--bg-subtle)', padding: '1rem', borderRadius: 'var(--radius-sm)' }}>
-                <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase' }}>MATCHES</div>
-                <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
+              <div style={{ background: '#ffffff', padding: '1.25rem 1rem', borderRadius: 'var(--radius-md)', boxShadow: 'var(--clay-tile-shadow)', border: '1px solid rgba(255, 255, 255, 0.95)' }}>
+                <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>MATCHES</div>
+                <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-main)', fontFamily: 'var(--font-heading)', marginTop: '0.25rem' }}>
                   {playerData.careerStats?.matches || 28}
                 </div>
               </div>
-              <div style={{ background: 'var(--bg-subtle)', padding: '1rem', borderRadius: 'var(--radius-sm)' }}>
-                <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase' }}>RUNS</div>
-                <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--accent-emerald)', fontFamily: 'var(--font-heading)' }}>
+              <div style={{ background: '#ffffff', padding: '1.25rem 1rem', borderRadius: 'var(--radius-md)', boxShadow: 'var(--clay-tile-shadow)', border: '1px solid rgba(255, 255, 255, 0.95)' }}>
+                <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>RUNS</div>
+                <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--accent-emerald)', fontFamily: 'var(--font-heading)', marginTop: '0.25rem' }}>
                   {playerData.careerStats?.runs || 890}
                 </div>
               </div>
-              <div style={{ background: 'var(--bg-subtle)', padding: '1rem', borderRadius: 'var(--radius-sm)' }}>
-                <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase' }}>BATTING AVG</div>
-                <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
+              <div style={{ background: '#ffffff', padding: '1.25rem 1rem', borderRadius: 'var(--radius-md)', boxShadow: 'var(--clay-tile-shadow)', border: '1px solid rgba(255, 255, 255, 0.95)' }}>
+                <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>BATTING AVG</div>
+                <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-main)', fontFamily: 'var(--font-heading)', marginTop: '0.25rem' }}>
                   {playerData.careerStats?.battingAvg || 36.4}
                 </div>
               </div>
-              <div style={{ background: 'var(--bg-subtle)', padding: '1rem', borderRadius: 'var(--radius-sm)' }}>
-                <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase' }}>STRIKE RATE</div>
-                <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--accent-sapphire)', fontFamily: 'var(--font-heading)' }}>
+              <div style={{ background: '#ffffff', padding: '1.25rem 1rem', borderRadius: 'var(--radius-md)', boxShadow: 'var(--clay-tile-shadow)', border: '1px solid rgba(255, 255, 255, 0.95)' }}>
+                <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>STRIKE RATE</div>
+                <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--accent-sapphire)', fontFamily: 'var(--font-heading)', marginTop: '0.25rem' }}>
                   {playerData.careerStats?.strikeRate || 142.1}
                 </div>
               </div>
-              <div style={{ background: 'var(--bg-subtle)', padding: '1rem', borderRadius: 'var(--radius-sm)' }}>
-                <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase' }}>WICKETS</div>
-                <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'var(--font-heading)' }}>
+              <div style={{ background: '#ffffff', padding: '1.25rem 1rem', borderRadius: 'var(--radius-md)', boxShadow: 'var(--clay-tile-shadow)', border: '1px solid rgba(255, 255, 255, 0.95)' }}>
+                <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>WICKETS</div>
+                <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--accent-gold)', fontFamily: 'var(--font-heading)', marginTop: '0.25rem' }}>
                   {playerData.careerStats?.wickets || 12}
                 </div>
               </div>
-              <div style={{ background: 'var(--bg-subtle)', padding: '1rem', borderRadius: 'var(--radius-sm)' }}>
-                <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase' }}>ECONOMY</div>
-                <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
+              <div style={{ background: '#ffffff', padding: '1.25rem 1rem', borderRadius: 'var(--radius-md)', boxShadow: 'var(--clay-tile-shadow)', border: '1px solid rgba(255, 255, 255, 0.95)' }}>
+                <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>ECONOMY</div>
+                <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-main)', fontFamily: 'var(--font-heading)', marginTop: '0.25rem' }}>
                   {playerData.careerStats?.economyRate || 7.8}
                 </div>
               </div>

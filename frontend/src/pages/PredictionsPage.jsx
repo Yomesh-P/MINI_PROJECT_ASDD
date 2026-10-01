@@ -124,15 +124,15 @@ export default function PredictionsPage() {
       )}
 
       {/* MLOps Architecture Explanatory Callout */}
-      <div className="bento-card" style={{ background: '#f8fafc', border: '1px solid var(--border-subtle)' }}>
-        <h3 style={{ fontSize: '1.05rem', color: 'var(--accent-sapphire)', marginBottom: '0.65rem' }}>
-          🧠 How This Model Operates (LO5 Architecture):
-        </h3>
-        <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: '1.7' }}>
-          1. The Node.js Express backend extracts a rolling 5-match history from <code>PlayerMatchStat</code> along with opposition bowling economy and venue score indices.<br />
-          2. The payload is sent via HTTP POST to the Python FastAPI microservice (<code>/predict/runs</code> and <code>/predict/pom</code>).<br />
-          3. FastAPI evaluates the feature vector using a RandomForest Regressor and Classifier loaded directly from the MLflow Model Registry.<br />
-          4. An Apache Airflow DAG runs weekly to retrain and promote models whose validation MAE improves over the production champion.
+      <div className="card">
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--accent-sapphire-clay)', color: 'var(--accent-sapphire)', boxShadow: 'var(--accent-sapphire-shadow)', padding: '0.35rem 0.85rem', borderRadius: 'var(--radius-full)', fontSize: '0.8rem', fontWeight: 800, marginBottom: '0.85rem' }}>
+          🧠 LO5 Architecture: FastAPI Microservice & MLOps Pipeline
+        </div>
+        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: '1.75' }}>
+          <strong>1.</strong> The Node.js Express backend extracts a rolling 5-match history from <code>PlayerMatchStat</code> along with opposition bowling economy and venue score indices.<br />
+          <strong>2.</strong> The payload is sent via HTTP POST to the Python FastAPI microservice (<code>/predict/runs</code> and <code>/predict/pom</code>).<br />
+          <strong>3.</strong> FastAPI evaluates the feature vector using a RandomForest Regressor and Classifier loaded directly from the MLflow Model Registry.<br />
+          <strong>4.</strong> An Apache Airflow DAG runs weekly to retrain and promote models whose validation MAE improves over the production champion.
         </p>
       </div>
     </div>

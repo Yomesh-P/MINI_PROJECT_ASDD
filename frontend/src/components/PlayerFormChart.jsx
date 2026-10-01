@@ -35,18 +35,18 @@ export default function PlayerFormChart({ playerName, history = [], recentAverag
       return (
         <div style={{
           background: '#ffffff',
-          border: '1px solid var(--border-subtle)',
-          borderRadius: 'var(--radius-sm)',
-          padding: '0.85rem 1.15rem',
-          boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+          border: '1px solid rgba(255, 255, 255, 0.95)',
+          borderRadius: 'var(--radius-md)',
+          padding: '1rem 1.25rem',
+          boxShadow: 'var(--clay-card-shadow)',
           fontSize: '0.88rem',
         }}>
-          <div style={{ fontWeight: 700, marginBottom: '0.4rem', color: 'var(--text-main)', borderBottom: '1px solid #f1f5f9', paddingBottom: '0.25rem' }}>
+          <div style={{ fontWeight: 800, marginBottom: '0.45rem', color: 'var(--text-main)', borderBottom: '2px solid #f1f5f9', paddingBottom: '0.35rem', fontFamily: 'var(--font-heading)' }}>
             {label}
           </div>
-          <div style={{ color: 'var(--accent-emerald)', fontWeight: 600 }}>Runs: <strong>{data.runs}</strong> ({data.ballsFaced} balls)</div>
-          <div style={{ color: 'var(--accent-sapphire)', fontWeight: 600 }}>Strike Rate: <strong>{data.strikeRate}</strong></div>
-          {data.wickets > 0 && <div style={{ color: 'var(--accent-gold)' }}>Wickets: <strong>{data.wickets}</strong></div>}
+          <div style={{ color: 'var(--accent-emerald)', fontWeight: 700 }}>Runs: <strong>{data.runs}</strong> ({data.ballsFaced} balls)</div>
+          <div style={{ color: 'var(--accent-sapphire)', fontWeight: 700 }}>Strike Rate: <strong>{data.strikeRate}</strong></div>
+          {data.wickets > 0 && <div style={{ color: 'var(--accent-gold)', fontWeight: 700 }}>Wickets: <strong>{data.wickets}</strong></div>}
         </div>
       );
     }
@@ -54,10 +54,10 @@ export default function PlayerFormChart({ playerName, history = [], recentAverag
   };
 
   return (
-    <div className="bento-card" style={{ marginBottom: '2.5rem' }}>
+    <div className="card" style={{ marginBottom: '2.5rem' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.75rem', flexWrap: 'wrap', gap: '0.75rem' }}>
         <div>
-          <h3 style={{ fontSize: '1.35rem', marginBottom: '0.25rem' }}>
+          <h3 style={{ fontSize: '1.4rem', marginBottom: '0.25rem' }}>
             Recent Form & Trajectory: <span style={{ color: 'var(--accent-emerald)' }}>{playerName}</span>
           </h3>
           <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>
@@ -66,13 +66,13 @@ export default function PlayerFormChart({ playerName, history = [], recentAverag
         </div>
 
         <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
-          <div style={{ textAlign: 'right', background: 'var(--bg-subtle)', padding: '0.5rem 1rem', borderRadius: 'var(--radius-sm)' }}>
-            <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase' }}>5-Match Form Avg</div>
-            <div style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--accent-emerald)' }}>{recentAverage}</div>
+          <div style={{ textAlign: 'right', background: '#ffffff', padding: '0.75rem 1.25rem', borderRadius: 'var(--radius-md)', boxShadow: 'var(--clay-tile-shadow)', border: '1px solid rgba(255, 255, 255, 0.95)' }}>
+            <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>5-Match Form Avg</div>
+            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--accent-emerald)', fontFamily: 'var(--font-heading)' }}>{recentAverage}</div>
           </div>
-          <div style={{ textAlign: 'right', background: 'var(--bg-subtle)', padding: '0.5rem 1rem', borderRadius: 'var(--radius-sm)' }}>
-            <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase' }}>Career Average</div>
-            <div style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--text-main)' }}>{careerStats.battingAvg || 34.2}</div>
+          <div style={{ textAlign: 'right', background: '#ffffff', padding: '0.75rem 1.25rem', borderRadius: 'var(--radius-md)', boxShadow: 'var(--clay-tile-shadow)', border: '1px solid rgba(255, 255, 255, 0.95)' }}>
+            <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Career Average</div>
+            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>{careerStats.battingAvg || 34.2}</div>
           </div>
         </div>
       </div>

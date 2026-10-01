@@ -1,55 +1,154 @@
+/* ==========================================================================
+   SMART CRICKET TRACKER - PURE WHITE CLAYMORPHISM DESIGN SYSTEM
+   Tactile 3D Inflatable Clay • Porcelain White Surfaces • Specular Highlights
+   ========================================================================== */
+
 :root {
-  /* Crisp White Luxury Canvas */
-  --bg-canvas: #f8fafc;
-  --bg-subtle: #f1f5f9;
+  /* --------------------------------------------------------------------------
+     1. Surfaces & Canvas (Porcelain, Off-White & Soft Ambient Light)
+     -------------------------------------------------------------------------- */
+  --clay-bg-canvas: #f2f5fa;
+  --clay-card-bg: #ffffff;
+  --clay-subtle-bg: #f8fafc;
+  --clay-pressed-bg: #e9eff7;
+
+  /* Legacy & Semantic Variable Bindings (Zero Broken Styles) */
+  --bg-subtle: #f8fafc;
   --bg-card: #ffffff;
-  --bg-card-hover: #ffffff;
-  --bg-elevated: #ffffff;
-  --bg-glass: rgba(255, 255, 255, 0.85);
+  --border-subtle: rgba(210, 222, 238, 0.6);
+  --border-accent: rgba(255, 255, 255, 0.95);
 
-  /* Precise Luxury Borders */
-  --border-subtle: #e2e8f0;
-  --border-strong: #cbd5e1;
-  --border-accent: rgba(5, 150, 105, 0.25);
+  /* --------------------------------------------------------------------------
+     2. Multi-Layer 3D Clay Shadows (Specular Glow + Ambient Depth)
+     -------------------------------------------------------------------------- */
+  /* Standard Inflatable Clay Card */
+  --clay-card-shadow:
+    14px 18px 36px rgba(160, 178, 202, 0.22),
+    -10px -10px 28px rgba(255, 255, 255, 0.98),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.95),
+    inset -4px -4px 8px rgba(160, 178, 202, 0.12);
 
-  /* Curated Colors */
+  --clay-card-shadow-hover:
+    18px 26px 46px rgba(160, 178, 202, 0.3),
+    -12px -12px 32px rgba(255, 255, 255, 1),
+    inset 4px 4px 8px rgba(255, 255, 255, 1),
+    inset -4px -4px 8px rgba(160, 178, 202, 0.15);
+
+  /* Inner Sub-Tile / Secondary Card */
+  --clay-tile-shadow:
+    8px 12px 24px rgba(160, 178, 202, 0.18),
+    -6px -6px 18px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 6px rgba(255, 255, 255, 0.9),
+    inset -2px -2px 6px rgba(160, 178, 202, 0.1);
+
+  /* Tactile Squishy Button */
+  --clay-button-shadow:
+    8px 12px 24px rgba(15, 23, 42, 0.24),
+    -4px -4px 14px rgba(255, 255, 255, 0.9),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.4),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.2);
+
+  --clay-button-secondary-shadow:
+    8px 12px 22px rgba(160, 178, 202, 0.22),
+    -6px -6px 16px rgba(255, 255, 255, 0.95),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.95),
+    inset -3px -3px 6px rgba(160, 178, 202, 0.14);
+
+  --clay-button-pressed:
+    inset 4px 4px 10px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.35),
+    2px 2px 6px rgba(160, 178, 202, 0.15);
+
+  --clay-button-secondary-pressed:
+    inset 4px 4px 8px rgba(160, 178, 202, 0.25),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.8),
+    2px 2px 4px rgba(160, 178, 202, 0.1);
+
+  /* Spherical 3D Ball Marbles */
+  --clay-sphere-shadow:
+    6px 8px 16px rgba(160, 178, 202, 0.24),
+    -4px -4px 12px rgba(255, 255, 255, 0.95),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.95),
+    inset -4px -4px 8px rgba(160, 178, 202, 0.22);
+
+  /* Carved Inset Form Field */
+  --clay-inset-field:
+    inset 3px 4px 8px rgba(160, 178, 202, 0.22),
+    inset -3px -3px 8px rgba(255, 255, 255, 0.85),
+    0 1px 3px rgba(0, 0, 0, 0.02);
+
+  /* Floating Navbar & Dock */
+  --clay-nav-shadow:
+    10px 14px 28px rgba(160, 178, 202, 0.2),
+    -8px -8px 22px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 6px rgba(255, 255, 255, 0.9),
+    inset -2px -2px 6px rgba(160, 178, 202, 0.08);
+
+  /* --------------------------------------------------------------------------
+     3. Clay Pastel Accent Colors (Vibrant Candies on White Porcelain)
+     -------------------------------------------------------------------------- */
+  /* Emerald (Live / Wins / NRR Positive) */
   --accent-emerald: #059669;
   --accent-emerald-light: #ecfdf5;
-  --accent-emerald-border: #a7f3d0;
-  --accent-gold: #d97706;
-  --accent-gold-light: #fffbeb;
+  --accent-emerald-clay: #ecfdf5;
+  --accent-emerald-border: rgba(16, 185, 129, 0.25);
+  --accent-emerald-shadow:
+    inset 3px 3px 6px rgba(255, 255, 255, 0.95),
+    inset -3px -3px 6px rgba(5, 150, 105, 0.16);
+
+  /* Sapphire (Info / ML Forecasts / Active Nav) */
   --accent-sapphire: #2563eb;
   --accent-sapphire-light: #eff6ff;
+  --accent-sapphire-clay: #eff6ff;
+  --accent-sapphire-border: rgba(37, 99, 235, 0.25);
+  --accent-sapphire-shadow:
+    inset 3px 3px 6px rgba(255, 255, 255, 0.95),
+    inset -3px -3px 6px rgba(37, 99, 235, 0.16);
+
+  /* Gold / Amber (Sixes / Wickets Alert / POM) */
+  --accent-gold: #d97706;
+  --accent-gold-light: #fffbeb;
+  --accent-gold-clay: #fffbeb;
+  --accent-gold-border: rgba(217, 119, 6, 0.25);
+  --accent-gold-shadow:
+    inset 3px 3px 6px rgba(255, 255, 255, 0.95),
+    inset -3px -3px 6px rgba(217, 119, 6, 0.16);
+
+  /* Ruby / Coral (Live Dot / Losses / Dismissals) */
   --accent-ruby: #dc2626;
   --accent-ruby-light: #fef2f2;
-  --accent-purple: #7c3aed;
-  --accent-purple-light: #f5f3ff;
+  --accent-ruby-clay: #fef2f2;
+  --accent-ruby-border: rgba(220, 38, 38, 0.25);
+  --accent-ruby-shadow:
+    inset 3px 3px 6px rgba(255, 255, 255, 0.95),
+    inset -3px -3px 6px rgba(220, 38, 38, 0.18);
 
-  /* Typography Colors */
+  /* --------------------------------------------------------------------------
+     4. Typography & Crisp Contrast
+     -------------------------------------------------------------------------- */
   --text-main: #0f172a;
   --text-muted: #64748b;
   --text-faint: #94a3b8;
-  --text-inverted: #ffffff;
 
-  /* Fonts */
   --font-heading: 'Plus Jakarta Sans', 'Outfit', sans-serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Luxury Elevation Shadows */
-  --shadow-bento: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(0, 0, 0, 0.04);
-  --shadow-bento-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(0, 0, 0, 0.05);
-  --shadow-modal: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-
-  /* Radii */
-  --radius-xs: 6px;
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+  /* --------------------------------------------------------------------------
+     5. Organic Curvature Radii & Smooth Transitions
+     -------------------------------------------------------------------------- */
+  --radius-xs: 12px;
+  --radius-sm: 18px;
+  --radius-md: 24px;
+  --radius-lg: 32px;
+  --radius-xl: 40px;
   --radius-full: 9999px;
 
-  --transition-smooth: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-clay: 0.24s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+/* ==========================================================================
+   Base & Resets
+   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -58,27 +157,29 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-canvas);
+  background-color: var(--clay-bg-canvas);
   background-image: 
-    radial-gradient(at 0% 0%, rgba(5, 150, 105, 0.04) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(37, 99, 235, 0.04) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(217, 119, 6, 0.03) 0px, transparent 60%);
+    radial-gradient(at 15% 10%, rgba(255, 255, 255, 0.95) 0px, transparent 55%),
+    radial-gradient(at 85% 15%, rgba(224, 238, 255, 0.65) 0px, transparent 50%),
+    radial-gradient(at 50% 85%, rgba(230, 248, 242, 0.5) 0px, transparent 60%);
   background-attachment: fixed;
   color: var(--text-main);
   min-height: 100vh;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography Hierarchy */
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
-  letter-spacing: -0.03em;
-  font-weight: 700;
+  letter-spacing: -0.035em;
+  font-weight: 800;
   color: var(--text-main);
 }
 
-/* Layout */
+/* ==========================================================================
+   Layout Containers
+   ========================================================================== */
 .app-container {
   display: flex;
   flex-direction: column;
@@ -90,31 +191,32 @@ h1, h2, h3, h4 {
   max-width: 1320px;
   width: 100%;
   margin: 0 auto;
-  padding: 2.5rem 1.75rem 5rem;
+  padding: 2.25rem 1.75rem 4.5rem;
 }
 
-/* Floating Frosted White Navbar */
+/* ==========================================================================
+   Floating White Clay Navbar
+   ========================================================================== */
 .navbar {
   position: sticky;
-  top: 1rem;
+  top: 1.25rem;
   z-index: 100;
   max-width: 1320px;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.25rem;
   padding: 0 1.75rem;
   width: 100%;
 }
 
 .nav-inner {
-  background: var(--bg-glass);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border-subtle);
+  background: var(--clay-card-bg);
   border-radius: var(--radius-full);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.02);
+  box-shadow: var(--clay-nav-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.95);
   padding: 0.65rem 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .nav-brand {
@@ -122,21 +224,26 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 0.75rem;
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   font-weight: 800;
   color: var(--text-main);
   cursor: pointer;
-  letter-spacing: -0.02em;
+  user-select: none;
+  transition: transform var(--transition-clay);
+}
+
+.nav-brand:hover {
+  transform: scale(1.02);
 }
 
 .nav-brand-badge {
-  background: var(--accent-emerald-light);
+  background: var(--accent-emerald-clay);
   color: var(--accent-emerald);
-  border: 1px solid var(--accent-emerald-border);
-  padding: 0.2rem 0.6rem;
+  box-shadow: var(--accent-emerald-shadow);
+  padding: 0.28rem 0.75rem;
   border-radius: var(--radius-full);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.02em;
 }
 
@@ -149,123 +256,97 @@ h1, h2, h3, h4 {
 .nav-btn {
   background: transparent;
   color: var(--text-muted);
-  padding: 0.5rem 0.95rem;
+  padding: 0.55rem 1.1rem;
   border-radius: var(--radius-full);
   font-size: 0.88rem;
-  font-weight: 500;
-  transition: all var(--transition-smooth);
+  font-weight: 600;
+  transition: all var(--transition-clay);
   border: none;
   cursor: pointer;
+  position: relative;
 }
 
 .nav-btn:hover {
   color: var(--text-main);
-  background: var(--bg-subtle);
+  transform: translateY(-2px);
 }
 
 .nav-btn.active {
   color: var(--text-main);
   background: #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
-  font-weight: 600;
+  box-shadow: 
+    6px 8px 18px rgba(160, 178, 202, 0.22),
+    -4px -4px 12px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 5px rgba(160, 178, 202, 0.1);
+  font-weight: 700;
 }
 
 .nav-auth-btn {
   background: #0f172a;
   color: #ffffff;
-  padding: 0.55rem 1.2rem;
+  padding: 0.6rem 1.35rem;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.86rem;
+  font-weight: 700;
   border: none;
   cursor: pointer;
-  transition: all var(--transition-smooth);
+  box-shadow: var(--clay-button-shadow);
+  transition: all var(--transition-clay);
 }
 
 .nav-auth-btn:hover {
+  transform: translateY(-2px) scale(1.02);
   background: #1e293b;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  box-shadow: 
+    8px 14px 26px rgba(15, 23, 42, 0.3),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.35);
 }
 
-/* ==========================================================
-   BENTO GRID SYSTEM
-   ========================================================== */
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+.nav-auth-btn:active {
+  transform: scale(0.97);
+  box-shadow: var(--clay-button-pressed);
 }
 
-.bento-card {
-  background: var(--bg-card);
+/* ==========================================================================
+   Inflatable 3D White Clay Cards & Bento Modules
+   ========================================================================== */
+.card, .bento-card {
+  background: var(--clay-card-bg);
   border-radius: var(--radius-lg);
-  padding: 1.75rem;
-  box-shadow: var(--shadow-bento);
-  border: 1px solid var(--border-subtle);
-  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  padding: 2.25rem;
+  box-shadow: var(--clay-card-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  transition: transform var(--transition-clay), box-shadow var(--transition-clay);
   position: relative;
-  overflow: hidden;
 }
 
-.bento-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-bento-hover);
+.card:hover, .bento-card:hover {
+  transform: translateY(-4px) scale(1.005);
+  box-shadow: var(--clay-card-shadow-hover);
 }
 
-.card {
-  background: var(--bg-card);
-  border-radius: var(--radius-lg);
-  padding: 1.75rem;
-  box-shadow: var(--shadow-bento);
-  border: 1px solid var(--border-subtle);
-  transition: all var(--transition-smooth);
-}
-
-.card:hover {
-  box-shadow: var(--shadow-bento-hover);
-}
-
-/* Bento Column Spans */
-.bento-col-12 { grid-column: span 12; }
-.bento-col-8  { grid-column: span 8; }
-.bento-col-6  { grid-column: span 6; }
-.bento-col-4  { grid-column: span 4; }
-.bento-col-3  { grid-column: span 3; }
-
-/* Hero Bento Banner */
-.hero-bento {
+/* Hero Clay Banner */
+.hero-bento, .hero-banner {
   background: #ffffff;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  padding: 3rem 2.5rem;
-  margin-bottom: 2rem;
-  box-shadow: var(--shadow-bento);
+  border-radius: var(--radius-xl);
+  padding: 3.25rem 3rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--clay-card-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.95);
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
   position: relative;
   overflow: hidden;
 }
 
-.hero-bento::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent-emerald), var(--accent-sapphire), var(--accent-gold));
-}
-
 .hero-title {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   line-height: 1.15;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
   color: #0f172a;
-  letter-spacing: -0.03em;
 }
 
 .hero-title span {
@@ -274,82 +355,90 @@ h1, h2, h3, h4 {
 
 .hero-subtitle {
   color: var(--text-muted);
-  font-size: 1.05rem;
-  max-width: 680px;
-  line-height: 1.6;
+  font-size: 1.08rem;
+  max-width: 720px;
+  line-height: 1.65;
 }
 
-/* Live Badge with Soft Light Glow */
+/* 3D Clay Pills & Badges */
 .live-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  background: var(--accent-ruby-light);
-  border: 1px solid rgba(220, 38, 38, 0.2);
+  gap: 0.55rem;
+  background: var(--accent-ruby-clay);
   color: var(--accent-ruby);
-  padding: 0.3rem 0.8rem;
+  box-shadow: var(--accent-ruby-shadow);
+  padding: 0.35rem 1rem;
   border-radius: var(--radius-full);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .live-dot {
-  width: 7px;
-  height: 7px;
+  width: 9px;
+  height: 9px;
   background: var(--accent-ruby);
   border-radius: 50%;
-  animation: pulse-dot 1.5s infinite;
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.7);
+  animation: clay-pulse 1.4s infinite;
 }
 
-@keyframes pulse-dot {
+@keyframes clay-pulse {
   0% { transform: scale(0.9); opacity: 0.8; }
-  50% { transform: scale(1.4); opacity: 1; box-shadow: 0 0 10px rgba(220, 38, 38, 0.5); }
+  50% { transform: scale(1.35); opacity: 1; }
   100% { transform: scale(0.9); opacity: 0.8; }
 }
 
-/* Bento Stats Grid */
+/* ==========================================================================
+   Clay Stats Grid & Inflatable Cards
+   ========================================================================== */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.25rem;
-  margin-bottom: 2rem;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .stat-card {
   background: #ffffff;
-  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  padding: 1.5rem;
-  box-shadow: var(--shadow-bento);
+  padding: 1.75rem 1.5rem;
+  box-shadow: var(--clay-tile-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.95);
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  transition: all var(--transition-smooth);
+  transition: all var(--transition-clay);
 }
 
 .stat-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-bento-hover);
+  transform: translateY(-4px);
+  box-shadow: 
+    12px 18px 30px rgba(160, 178, 202, 0.28),
+    -8px -8px 20px rgba(255, 255, 255, 1),
+    inset 2px 2px 6px rgba(255, 255, 255, 0.95);
 }
 
 .stat-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius-md);
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  font-size: 1.85rem;
   flex-shrink: 0;
+  box-shadow: var(--clay-tile-shadow);
+  background: #ffffff;
 }
 
 .stat-val {
-  font-size: 1.65rem;
+  font-size: 1.85rem;
   font-weight: 800;
   font-family: var(--font-heading);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   color: var(--text-main);
   font-feature-settings: 'tnum';
 }
@@ -359,18 +448,20 @@ h1, h2, h3, h4 {
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: 0.15rem;
 }
 
-/* Live Scorecard Bento Component */
+/* ==========================================================================
+   Live Scorecard Module (White Clay)
+   ========================================================================== */
 .scorecard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.75rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid #f1f5f9;
 }
 
 .match-teams-grid {
@@ -378,105 +469,133 @@ h1, h2, h3, h4 {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   text-align: center;
-  margin-bottom: 1.75rem;
-  gap: 1.5rem;
+  margin-bottom: 2rem;
+  gap: 1.75rem;
 }
 
 .team-score-block {
-  padding: 1.75rem 1.5rem;
+  padding: 2.25rem 1.75rem;
   background: #ffffff;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-  transition: all var(--transition-smooth);
+  box-shadow: var(--clay-tile-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  transition: all var(--transition-clay);
 }
 
 .team-score-block:hover {
-  border-color: var(--border-strong);
+  transform: translateY(-3px);
+  box-shadow: 
+    10px 16px 28px rgba(160, 178, 202, 0.25),
+    -6px -6px 18px #ffffff;
 }
 
 .team-short {
-  font-size: 1.65rem;
+  font-size: 1.85rem;
   font-weight: 800;
   font-family: var(--font-heading);
-  letter-spacing: -0.01em;
   color: var(--text-main);
 }
 
 .team-runs-wickets {
-  font-size: 2.6rem;
+  font-size: 3rem;
   font-weight: 800;
   font-family: var(--font-heading);
   color: var(--accent-emerald);
-  margin: 0.25rem 0;
-  letter-spacing: -0.03em;
+  margin: 0.4rem 0;
+  letter-spacing: -0.035em;
   font-feature-settings: 'tnum';
 }
 
 .team-overs {
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .vs-badge {
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  box-shadow: var(--clay-sphere-shadow);
   border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
+  user-select: none;
 }
 
-/* Ball-by-ball Ticker */
+/* ==========================================================================
+   3D Clay Spherical Ball Bubbles (Over Timeline)
+   ========================================================================== */
 .over-balls-container {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.85rem;
   flex-wrap: wrap;
-  margin: 0.75rem 0 1.25rem;
+  margin: 1.25rem 0 1.5rem;
 }
 
 .ball-bubble {
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 0.88rem;
+  font-weight: 800;
+  font-size: 0.95rem;
   background: #ffffff;
-  border: 1px solid var(--border-strong);
+  box-shadow: var(--clay-sphere-shadow);
   color: var(--text-main);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
   font-family: var(--font-heading);
+  transition: transform var(--transition-clay), box-shadow var(--transition-clay);
+  cursor: default;
+  user-select: none;
+}
+
+.ball-bubble:hover {
+  transform: scale(1.15) translateY(-2px);
+  box-shadow: 
+    8px 12px 20px rgba(160, 178, 202, 0.32),
+    -4px -4px 12px #ffffff;
 }
 
 .ball-four {
-  background: var(--accent-sapphire-light);
-  border-color: #93c5fd;
+  background: var(--accent-sapphire-clay);
   color: var(--accent-sapphire);
+  box-shadow: 
+    6px 8px 16px rgba(37, 99, 235, 0.22),
+    -4px -4px 10px #ffffff,
+    inset 4px 4px 8px #ffffff,
+    inset -4px -4px 8px rgba(37, 99, 235, 0.2);
 }
 
 .ball-six {
-  background: var(--accent-gold-light);
-  border-color: #fde68a;
+  background: var(--accent-gold-clay);
   color: var(--accent-gold);
+  box-shadow: 
+    6px 8px 16px rgba(217, 119, 6, 0.22),
+    -4px -4px 10px #ffffff,
+    inset 4px 4px 8px #ffffff,
+    inset -4px -4px 8px rgba(217, 119, 6, 0.2);
 }
 
 .ball-wicket {
-  background: var(--accent-ruby-light);
-  border-color: #fca5a5;
+  background: var(--accent-ruby-clay);
   color: var(--accent-ruby);
+  box-shadow: 
+    6px 8px 16px rgba(220, 38, 38, 0.26),
+    -4px -4px 10px #ffffff,
+    inset 4px 4px 8px #ffffff,
+    inset -4px -4px 8px rgba(220, 38, 38, 0.22);
 }
 
-/* Tables (Standings) */
+/* ==========================================================================
+   Claymorphic Standings Table (Floating Rows)
+   ========================================================================== */
 .table-responsive {
   overflow-x: auto;
   width: 100%;
@@ -485,113 +604,197 @@ h1, h2, h3, h4 {
 .custom-table {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 0;
+  border-spacing: 0 0.65rem;
   text-align: left;
 }
 
 .custom-table th {
-  background: var(--bg-subtle);
+  background: transparent;
   color: var(--text-muted);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  padding: 1rem 1.25rem;
+  padding: 0.85rem 1.25rem;
   font-weight: 700;
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
+  border: none;
 }
 
-.custom-table th:first-child { border-top-left-radius: var(--radius-sm); border-bottom-left-radius: var(--radius-sm); }
-.custom-table th:last-child { border-top-right-radius: var(--radius-sm); border-bottom-right-radius: var(--radius-sm); }
-
 .custom-table td {
-  padding: 1.1rem 1.25rem;
-  border-bottom: 1px solid var(--border-subtle);
+  padding: 1.25rem 1.25rem;
   font-size: 0.95rem;
   color: var(--text-main);
   background: #ffffff;
+  border: none;
+  box-shadow: var(--clay-tile-shadow);
+  transition: all var(--transition-clay);
+}
+
+.custom-table td:first-child { 
+  border-top-left-radius: var(--radius-sm); 
+  border-bottom-left-radius: var(--radius-sm); 
+}
+.custom-table td:last-child { 
+  border-top-right-radius: var(--radius-sm); 
+  border-bottom-right-radius: var(--radius-sm); 
 }
 
 .custom-table tr:hover td {
-  background: #fafafa;
+  background: #ffffff;
+  box-shadow: 
+    8px 14px 26px rgba(160, 178, 202, 0.24),
+    -4px -4px 14px #ffffff,
+    inset 2px 2px 6px rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
 }
 
 .nrr-badge {
   display: inline-block;
-  padding: 0.25rem 0.65rem;
+  padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.84rem;
+  font-weight: 800;
   font-family: var(--font-heading);
 }
 
 .nrr-positive {
-  background: var(--accent-emerald-light);
+  background: var(--accent-emerald-clay);
   color: var(--accent-emerald);
-  border: 1px solid var(--accent-emerald-border);
+  box-shadow: var(--accent-emerald-shadow);
 }
 
 .nrr-negative {
-  background: var(--accent-ruby-light);
+  background: var(--accent-ruby-clay);
   color: var(--accent-ruby);
-  border: 1px solid #fecaca;
+  box-shadow: var(--accent-ruby-shadow);
 }
 
-/* Buttons */
+/* ==========================================================================
+   Inflatable 3D Tactile Buttons
+   ========================================================================== */
 .btn {
-  padding: 0.65rem 1.35rem;
+  padding: 0.75rem 1.6rem;
   border-radius: var(--radius-full);
-  font-size: 0.9rem;
-  font-weight: 600;
-  transition: all var(--transition-smooth);
+  font-size: 0.92rem;
+  font-weight: 700;
+  transition: all var(--transition-clay);
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
   border: none;
   cursor: pointer;
+  user-select: none;
+  font-family: var(--font-sans);
 }
 
 .btn-primary {
   background: #0f172a;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  box-shadow: var(--clay-button-shadow);
 }
 
 .btn-primary:hover {
+  transform: translateY(-2px);
   background: #1e293b;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.2);
+  box-shadow: 
+    10px 16px 28px rgba(15, 23, 42, 0.32),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.35);
+}
+
+.btn-primary:active {
+  transform: scale(0.97) translateY(2px);
+  box-shadow: var(--clay-button-pressed);
 }
 
 .btn-secondary {
   background: #ffffff;
   color: var(--text-main);
-  border: 1px solid var(--border-strong);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--clay-button-secondary-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.95);
 }
 
 .btn-secondary:hover {
-  background: var(--bg-subtle);
-  border-color: var(--text-muted);
+  transform: translateY(-2px);
+  box-shadow: 
+    10px 16px 26px rgba(160, 178, 202, 0.28),
+    -6px -6px 18px #ffffff,
+    inset 3px 3px 6px rgba(255, 255, 255, 1);
+}
+
+.btn-secondary:active {
+  transform: scale(0.97) translateY(2px);
+  box-shadow: var(--clay-button-secondary-pressed);
 }
 
 .btn-danger {
-  background: var(--accent-ruby-light);
+  background: var(--accent-ruby-clay);
   color: var(--accent-ruby);
-  border: 1px solid #fca5a5;
+  box-shadow: 
+    6px 8px 16px rgba(220, 38, 38, 0.2),
+    inset 3px 3px 6px #ffffff,
+    inset -3px -3px 6px rgba(220, 38, 38, 0.16);
 }
 
 .btn-danger:hover {
-  background: #fee2e2;
+  transform: translateY(-2px);
+  box-shadow: 
+    8px 12px 20px rgba(220, 38, 38, 0.28),
+    inset 3px 3px 6px #ffffff;
 }
 
-/* Clean White Modal */
+.btn-danger:active {
+  transform: scale(0.97) translateY(2px);
+  box-shadow: 
+    inset 4px 4px 8px rgba(220, 38, 38, 0.25),
+    2px 2px 4px rgba(220, 38, 38, 0.1);
+}
+
+/* ==========================================================================
+   Carved Inset Clay Inputs & Forms
+   ========================================================================== */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-input, .form-select {
+  width: 100%;
+  padding: 0.95rem 1.35rem;
+  background: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  box-shadow: var(--clay-inset-field);
+  transition: all var(--transition-clay);
+}
+
+.form-input:focus, .form-select:focus {
+  outline: none;
+  background: #ffffff;
+  box-shadow: 
+    inset 3px 3px 6px rgba(5, 150, 105, 0.15),
+    0 0 0 3px rgba(5, 150, 105, 0.2);
+}
+
+/* ==========================================================================
+   Floating Clay Modal
+   ========================================================================== */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.4);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -601,60 +804,52 @@ h1, h2, h3, h4 {
 
 .modal-content {
   background: #ffffff;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  max-width: 580px;
+  border-radius: var(--radius-xl);
+  max-width: 600px;
   width: 100%;
-  padding: 2.25rem;
-  box-shadow: var(--shadow-modal);
+  padding: 2.75rem;
+  box-shadow: 
+    24px 36px 70px rgba(160, 178, 202, 0.4),
+    -16px -16px 36px rgba(255, 255, 255, 1),
+    inset 4px 4px 10px rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.95);
 }
 
-/* Forms */
-.form-group {
-  margin-bottom: 1.25rem;
-}
-
-.form-label {
-  display: block;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  margin-bottom: 0.4rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.form-input, .form-select {
+/* Floating White Clay Dock Footer */
+.clay-footer {
+  max-width: 1320px;
+  margin: 0 auto 2rem;
+  padding: 0 1.75rem;
   width: 100%;
-  padding: 0.8rem 1.1rem;
+}
+
+.clay-footer-inner {
   background: #ffffff;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-sm);
-  color: var(--text-main);
-  font-family: var(--font-sans);
-  font-size: 0.95rem;
-  transition: all var(--transition-smooth);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--clay-tile-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  padding: 1.75rem 2.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
 }
 
-.form-input:focus, .form-select:focus {
-  outline: none;
-  border-color: var(--accent-emerald);
-  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
-}
-
-/* Responsive */
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
 @media (max-width: 900px) {
-  .hero-bento {
+  .hero-bento, .hero-banner {
     grid-template-columns: 1fr;
-    padding: 2rem 1.5rem;
-  }
-  .bento-col-8, .bento-col-6, .bento-col-4, .bento-col-3 {
-    grid-column: span 12;
+    padding: 2.25rem 1.75rem;
   }
   .nav-inner {
     border-radius: var(--radius-md);
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.85rem;
   }
   .match-teams-grid {
     grid-template-columns: 1fr;

@@ -26,22 +26,16 @@ function MainApp() {
         {activeTab === 'login' && <LoginPage onLoginSuccess={() => setActiveTab('admin')} />}
       </main>
 
-      <footer style={{
-        borderTop: '1px solid var(--border-subtle)',
-        padding: '2.5rem 1.75rem',
-        textAlign: 'center',
-        background: '#ffffff',
-        fontSize: '0.88rem',
-        color: 'var(--text-muted)',
-      }}>
-        <div style={{ maxWidth: '1320px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.25rem' }}>
-          <div style={{ fontWeight: 600, color: 'var(--text-main)' }}>
-            🏏 <strong>Smart Cricket Tournament Tracker</strong> • White Bento Grid Edition
+      <footer className="clay-footer">
+        <div className="clay-footer-inner">
+          <div style={{ fontWeight: 700, color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+            <span style={{ fontSize: '1.25rem' }}>🏏</span>
+            <span><strong>Smart Cricket Tournament Tracker</strong> • White Claymorphism Edition</span>
           </div>
-          <div style={{ display: 'flex', gap: '1.5rem', fontSize: '0.82rem', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '1.5rem', fontSize: '0.84rem', flexWrap: 'wrap' }}>
             <span>DevOps: Git • Docker • K3s • Jenkins • Ansible</span>
-            <span>MLOps: FastAPI • MLflow • Apache Airflow</span>
-            <span>Observability: Prometheus • Grafana</span>
+            <span>MLOps: FastAPI • MLflow • Airflow</span>
+            <span>Metrics: Prometheus • Grafana</span>
           </div>
         </div>
       </footer>

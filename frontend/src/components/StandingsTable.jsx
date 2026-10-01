@@ -8,7 +8,7 @@ export default function StandingsTable({ standings = [], tournamentName = 'Mumba
           <h2 style={{ fontSize: '1.5rem', marginBottom: '0.25rem', color: 'var(--text-main)' }}>Official Standings & Table</h2>
           <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>{tournamentName} • Dynamic Net Run Rate (NRR) Engine</p>
         </div>
-        <span style={{ fontSize: '0.78rem', background: 'var(--accent-sapphire-light)', color: 'var(--accent-sapphire)', border: '1px solid #bfdbfe', padding: '0.35rem 0.85rem', borderRadius: 'var(--radius-full)', fontWeight: 700 }}>
+        <span style={{ fontSize: '0.78rem', background: 'var(--accent-sapphire-clay)', color: 'var(--accent-sapphire)', boxShadow: 'var(--accent-sapphire-shadow)', padding: '0.4rem 1rem', borderRadius: 'var(--radius-full)', fontWeight: 800 }}>
           Top 2 Advance to Championship Final
         </span>
       </div>
@@ -43,7 +43,7 @@ export default function StandingsTable({ standings = [], tournamentName = 'Mumba
                   <td>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
                       <span style={{ fontWeight: 700, fontSize: '0.98rem' }}>{team.teamName}</span>
-                      <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', background: 'var(--bg-subtle)', padding: '0.15rem 0.45rem', borderRadius: 'var(--radius-xs)', fontWeight: 600 }}>
+                      <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', background: '#ffffff', boxShadow: 'var(--clay-sphere-shadow)', padding: '0.2rem 0.55rem', borderRadius: 'var(--radius-full)', fontWeight: 700 }}>
                         {team.shortName}
                       </span>
                     </div>

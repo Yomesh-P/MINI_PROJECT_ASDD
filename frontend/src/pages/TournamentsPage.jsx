@@ -47,19 +47,19 @@ export default function TournamentsPage() {
             className="card"
             style={{
               cursor: 'pointer',
-              borderColor: selectedDetails?.tournament?._id === t._id ? 'var(--accent-emerald)' : undefined,
+              boxShadow: selectedDetails?.tournament?._id === t._id ? '0 0 0 3px rgba(5, 150, 105, 0.25), var(--clay-card-shadow-hover)' : undefined,
             }}
             onClick={() => handleSelectTournament(t._id)}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-              <span className="live-badge" style={{ background: 'rgba(16, 185, 129, 0.15)', borderColor: 'var(--accent-emerald)', color: 'var(--accent-emerald)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.85rem' }}>
+              <span style={{ background: 'var(--accent-emerald-clay)', color: 'var(--accent-emerald)', boxShadow: 'var(--accent-emerald-shadow)', padding: '0.35rem 0.85rem', borderRadius: 'var(--radius-full)', fontSize: '0.78rem', fontWeight: 800 }}>
                 {t.format}
               </span>
-              <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Status: {t.status}</span>
+              <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)', fontWeight: 600 }}>Status: <strong style={{ color: 'var(--accent-emerald)', textTransform: 'uppercase' }}>{t.status}</strong></span>
             </div>
-            <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{t.name}</h3>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.75rem' }}>📍 {t.venue}</p>
-            <div style={{ fontSize: '0.8rem', color: 'var(--text-faint)' }}>
+            <h3 style={{ fontSize: '1.3rem', marginBottom: '0.4rem' }}>{t.name}</h3>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: '0.75rem' }}>📍 {t.venue}</p>
+            <div style={{ fontSize: '0.82rem', color: 'var(--text-faint)', fontWeight: 500 }}>
               Dates: {new Date(t.startDate).toLocaleDateString()} – {new Date(t.endDate).toLocaleDateString()}
             </div>
           </div>
@@ -68,19 +68,19 @@ export default function TournamentsPage() {
 
       {selectedDetails && (
         <section>
-          <h2 style={{ fontSize: '1.4rem', marginBottom: '1.25rem' }}>
+          <h2 style={{ fontSize: '1.5rem', marginBottom: '1.25rem' }}>
             Participating Teams ({selectedDetails.teams?.length || 0})
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
             {selectedDetails.teams?.map((team) => (
               <div key={team._id} className="card">
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
-                  <div style={{ width: 42, height: 42, borderRadius: 'var(--radius-sm)', background: 'rgba(59, 130, 246, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, color: '#60a5fa' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                  <div style={{ width: 50, height: 50, borderRadius: 'var(--radius-sm)', background: 'var(--accent-sapphire-clay)', color: 'var(--accent-sapphire)', boxShadow: 'var(--accent-sapphire-shadow)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '1.1rem', fontFamily: 'var(--font-heading)' }}>
                     {team.shortName}
                   </div>
                   <div>
-                    <h4 style={{ margin: 0 }}>{team.name}</h4>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Captain: {team.captainName || 'TBD'}</span>
+                    <h4 style={{ margin: 0, fontSize: '1.1rem' }}>{team.name}</h4>
+                    <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Captain: <strong>{team.captainName || 'TBD'}</strong></span>
                   </div>
                 </div>
               </div>

@@ -46,24 +46,24 @@ export default function LiveMatchesPage({ onSelectPlayer }) {
       {/* Hero Bento Banner */}
       <section className="hero-bento">
         <div>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--bg-subtle)', border: '1px solid var(--border-subtle)', padding: '0.25rem 0.75rem', borderRadius: 'var(--radius-full)', fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '1rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#ffffff', boxShadow: 'var(--clay-sphere-shadow)', padding: '0.35rem 0.95rem', borderRadius: 'var(--radius-full)', fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '1.25rem' }}>
             <span>⚡ Automated DevOps & MLOps Lifecycle</span>
           </div>
           <h1 className="hero-title">
             Smart Cricket <span>Tournament Tracker</span>
           </h1>
           <p className="hero-subtitle">
-            Real-time ball-by-ball scorecards, automated Net Run Rate (NRR) standings,
+            Real-time ball-by-ball scorecards, dynamic Net Run Rate (NRR) standings,
             and machine learning player forecasts delivered via an automated DevOps pipeline.
           </p>
         </div>
 
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-          <div style={{ background: 'var(--accent-emerald-light)', border: '1px solid var(--accent-emerald-border)', padding: '1rem 1.5rem', borderRadius: 'var(--radius-md)', textAlign: 'center' }}>
-            <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--accent-emerald)', fontFamily: 'var(--font-heading)' }}>
+          <div style={{ background: '#ffffff', boxShadow: 'var(--clay-tile-shadow)', border: '1px solid rgba(255, 255, 255, 0.95)', padding: '1.25rem 1.75rem', borderRadius: 'var(--radius-md)', textAlign: 'center' }}>
+            <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--accent-emerald)', fontFamily: 'var(--font-heading)' }}>
               2025
             </div>
-            <div style={{ fontSize: '0.72rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--accent-emerald)' }}>
+            <div style={{ fontSize: '0.74rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--accent-emerald)', letterSpacing: '0.04em' }}>
               T20 Championship
             </div>
           </div>
@@ -75,15 +75,15 @@ export default function LiveMatchesPage({ onSelectPlayer }) {
 
       {/* Live Match Center Section */}
       <section style={{ marginBottom: '3rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
-          <h2 style={{ fontSize: '1.5rem', color: 'var(--text-main)' }}>Live Score Center</h2>
-          <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)', background: '#ffffff', border: '1px solid var(--border-subtle)', padding: '0.3rem 0.75rem', borderRadius: 'var(--radius-full)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+          <h2 style={{ fontSize: '1.6rem', color: 'var(--text-main)' }}>Live Score Center</h2>
+          <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)', background: '#ffffff', boxShadow: 'var(--clay-sphere-shadow)', padding: '0.35rem 0.95rem', borderRadius: 'var(--radius-full)', fontWeight: 600 }}>
             Auto-polling every 4s
           </span>
         </div>
 
         {liveMatches.length === 0 ? (
-          <div className="bento-card" style={{ textAlign: 'center', padding: '3.5rem 1.5rem' }}>
+          <div className="card" style={{ textAlign: 'center', padding: '3.5rem 1.5rem' }}>
             <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>☕</div>
             <h3 style={{ marginBottom: '0.5rem' }}>No Matches Currently Live</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem' }}>
@@ -104,35 +104,35 @@ export default function LiveMatchesPage({ onSelectPlayer }) {
 
       {/* Completed Matches Bento Section */}
       <section style={{ marginBottom: '3rem' }}>
-        <h2 style={{ fontSize: '1.4rem', marginBottom: '1.25rem', color: 'var(--text-main)' }}>Completed Matches & Results</h2>
+        <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: 'var(--text-main)' }}>Completed Matches & Results</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1.5rem' }}>
           {completedMatches.map((m) => (
-            <div key={m._id} className="bento-card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div key={m._id} className="card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '1rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '1.25rem', fontWeight: 500 }}>
                   <span>📅 {new Date(m.date).toLocaleDateString()}</span>
                   <span>📍 {m.venue}</span>
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', padding: '0.5rem 0.75rem', background: m.winner?._id === m.teamA?._id ? 'var(--accent-emerald-light)' : 'var(--bg-subtle)', borderRadius: 'var(--radius-xs)' }}>
-                  <span style={{ fontWeight: 700, fontSize: '1.1rem' }}>{m.teamA?.shortName || 'TMA'}</span>
-                  <span style={{ fontWeight: 800, fontSize: '1.2rem', color: m.winner?._id === m.teamA?._id ? 'var(--accent-emerald)' : 'var(--text-main)' }}>
-                    {m.scoreA?.runs}/{m.scoreA?.wickets} <span style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-muted)' }}>({m.scoreA?.overs} ov)</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.85rem', padding: '0.75rem 1.1rem', background: m.winner?._id === m.teamA?._id ? 'var(--accent-emerald-clay)' : '#ffffff', boxShadow: 'var(--clay-sphere-shadow)', borderRadius: 'var(--radius-sm)' }}>
+                  <span style={{ fontWeight: 800, fontSize: '1.1rem', fontFamily: 'var(--font-heading)' }}>{m.teamA?.shortName || 'TMA'}</span>
+                  <span style={{ fontWeight: 800, fontSize: '1.25rem', color: m.winner?._id === m.teamA?._id ? 'var(--accent-emerald)' : 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
+                    {m.scoreA?.runs}/{m.scoreA?.wickets} <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>({m.scoreA?.overs} ov)</span>
                   </span>
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', padding: '0.5rem 0.75rem', background: m.winner?._id === m.teamB?._id ? 'var(--accent-emerald-light)' : 'var(--bg-subtle)', borderRadius: 'var(--radius-xs)' }}>
-                  <span style={{ fontWeight: 700, fontSize: '1.1rem' }}>{m.teamB?.shortName || 'TMB'}</span>
-                  <span style={{ fontWeight: 800, fontSize: '1.2rem', color: m.winner?._id === m.teamB?._id ? 'var(--accent-emerald)' : 'var(--text-main)' }}>
-                    {m.scoreB?.runs}/{m.scoreB?.wickets} <span style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-muted)' }}>({m.scoreB?.overs} ov)</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', padding: '0.75rem 1.1rem', background: m.winner?._id === m.teamB?._id ? 'var(--accent-emerald-clay)' : '#ffffff', boxShadow: 'var(--clay-sphere-shadow)', borderRadius: 'var(--radius-sm)' }}>
+                  <span style={{ fontWeight: 800, fontSize: '1.1rem', fontFamily: 'var(--font-heading)' }}>{m.teamB?.shortName || 'TMB'}</span>
+                  <span style={{ fontWeight: 800, fontSize: '1.25rem', color: m.winner?._id === m.teamB?._id ? 'var(--accent-emerald)' : 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
+                    {m.scoreB?.runs}/{m.scoreB?.wickets} <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>({m.scoreB?.overs} ov)</span>
                   </span>
                 </div>
               </div>
 
-              <div style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '0.85rem', fontSize: '0.88rem' }}>
-                <span style={{ color: 'var(--accent-gold)', fontWeight: 700 }}>🏆 {m.resultDescription}</span>
+              <div style={{ borderTop: '2px solid #f1f5f9', paddingTop: '1rem', fontSize: '0.9rem' }}>
+                <span style={{ color: 'var(--accent-gold)', fontWeight: 800 }}>🏆 {m.resultDescription}</span>
                 {m.playerOfMatch && (
-                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
                     Player of the Match: <strong style={{ color: 'var(--text-main)' }}>{m.playerOfMatch.name}</strong>
                   </div>
                 )}

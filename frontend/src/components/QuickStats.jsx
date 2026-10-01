@@ -4,7 +4,7 @@ export default function QuickStats({ liveCount = 1, teamsCount = 4, matchesCount
   return (
     <div className="stats-grid">
       <div className="stat-card">
-        <div className="stat-icon" style={{ background: 'var(--accent-ruby-light)', color: 'var(--accent-ruby)' }}>
+        <div className="stat-icon" style={{ background: 'var(--accent-ruby-clay)', color: 'var(--accent-ruby)', boxShadow: 'var(--accent-ruby-shadow)' }}>
           🏏
         </div>
         <div>
@@ -14,7 +14,7 @@ export default function QuickStats({ liveCount = 1, teamsCount = 4, matchesCount
       </div>
 
       <div className="stat-card">
-        <div className="stat-icon" style={{ background: 'var(--accent-emerald-light)', color: 'var(--accent-emerald)' }}>
+        <div className="stat-icon" style={{ background: 'var(--accent-emerald-clay)', color: 'var(--accent-emerald)', boxShadow: 'var(--accent-emerald-shadow)' }}>
           🏆
         </div>
         <div>
@@ -24,7 +24,7 @@ export default function QuickStats({ liveCount = 1, teamsCount = 4, matchesCount
       </div>
 
       <div className="stat-card">
-        <div className="stat-icon" style={{ background: 'var(--accent-sapphire-light)', color: 'var(--accent-sapphire)' }}>
+        <div className="stat-icon" style={{ background: 'var(--accent-sapphire-clay)', color: 'var(--accent-sapphire)', boxShadow: 'var(--accent-sapphire-shadow)' }}>
           🤖
         </div>
         <div>
@@ -34,7 +34,7 @@ export default function QuickStats({ liveCount = 1, teamsCount = 4, matchesCount
       </div>
 
       <div className="stat-card">
-        <div className="stat-icon" style={{ background: 'var(--accent-gold-light)', color: 'var(--accent-gold)' }}>
+        <div className="stat-icon" style={{ background: 'var(--accent-gold-clay)', color: 'var(--accent-gold)', boxShadow: 'var(--accent-gold-shadow)' }}>
           ⚡
         </div>
         <div>

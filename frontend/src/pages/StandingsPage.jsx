@@ -71,13 +71,13 @@ export default function StandingsPage() {
       )}
 
       {/* NRR Formula Explanation Card (Pedagogical clarity for Lab evaluation) */}
-      <div className="card" style={{ marginTop: '2rem', background: 'rgba(0,0,0,0.2)' }}>
-        <h3 style={{ fontSize: '1rem', marginBottom: '0.5rem', color: 'var(--accent-gold)' }}>
-          📐 Net Run Rate (NRR) Formula Applied:
-        </h3>
-        <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>
-          NRR = (Total Runs Scored / Total Overs Faced) − (Total Runs Conceded / Total Overs Bowled).<br />
-          Ties award 1 point each; Wins award 2 points. If points are level, teams are ranked by NRR, followed by total wins.
+      <div className="card" style={{ marginTop: '2.5rem' }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--accent-gold-clay)', color: 'var(--accent-gold)', boxShadow: 'var(--accent-gold-shadow)', padding: '0.35rem 0.85rem', borderRadius: 'var(--radius-full)', fontSize: '0.8rem', fontWeight: 800, marginBottom: '0.75rem' }}>
+          📐 Net Run Rate (NRR) Formula Engine
+        </div>
+        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: '1.7' }}>
+          <strong>NRR = (Total Runs Scored / Total Overs Faced) − (Total Runs Conceded / Total Overs Bowled).</strong><br />
+          Ties award 1 point each; Wins award 2 points. If points are level, teams are ranked dynamically by NRR, followed by total matches won.
         </p>
       </div>
     </div>
