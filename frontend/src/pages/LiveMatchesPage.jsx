@@ -61,7 +61,7 @@ export default function LiveMatchesPage({ onSelectPlayer }) {
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
           <div style={{ background: '#ffffff', boxShadow: 'var(--clay-tile-shadow)', border: '1px solid rgba(255, 255, 255, 0.95)', padding: '1.25rem 1.75rem', borderRadius: 'var(--radius-md)', textAlign: 'center' }}>
             <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--accent-emerald)', fontFamily: 'var(--font-heading)' }}>
-              2025
+              2026
             </div>
             <div style={{ fontSize: '0.74rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--accent-emerald)', letterSpacing: '0.04em' }}>
               T20 Championship

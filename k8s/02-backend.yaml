@@ -16,7 +16,7 @@ metadata:
   namespace: cricket
 type: Opaque
 stringData:
-  JWT_SECRET: "k8s-prod-cricket-jwt-secret-key-2025"
+  JWT_SECRET: "k8s-prod-cricket-jwt-secret-key-2026"
 ---
 apiVersion: apps/v1
 kind: Deployment

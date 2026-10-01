@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function StandingsTable({ standings = [], tournamentName = 'Mumbai Premier League 2025' }) {
+export default function StandingsTable({ standings = [], tournamentName = 'Mumbai Premier League 2026' }) {
   return (
     <div className="bento-card">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.75rem', flexWrap: 'wrap', gap: '0.75rem' }}>

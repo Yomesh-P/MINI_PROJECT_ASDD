@@ -38,11 +38,11 @@ async function seedDatabase() {
 
     // 2. Create Tournament
     const tournament = await Tournament.create({
-      name: 'Mumbai Premier T20 Cup 2025',
+      name: 'Mumbai Premier T20 Cup 2026',
       format: 'T20',
       oversPerInnings: 20,
-      startDate: new Date('2025-03-01'),
-      endDate: new Date('2025-04-15'),
+      startDate: new Date('2026-03-01'),
+      endDate: new Date('2026-04-15'),
       venue: 'Wankhede Stadium, Mumbai',
       status: 'ongoing',
       rules: { pointsForWin: 2, pointsForTie: 1, pointsForLoss: 0 },
@@ -102,7 +102,7 @@ async function seedDatabase() {
       tournamentId: tournament._id,
       teamA: teamBandra._id,
       teamB: teamMarine._id,
-      date: new Date('2025-03-05'),
+      date: new Date('2026-03-05'),
       venue: 'Wankhede Stadium, Mumbai',
       status: 'completed',
       toss: { winner: teamBandra._id, decision: 'bat' },
@@ -119,7 +119,7 @@ async function seedDatabase() {
       tournamentId: tournament._id,
       teamA: teamShivaji._id,
       teamB: teamAndheri._id,
-      date: new Date('2025-03-08'),
+      date: new Date('2026-03-08'),
       venue: 'DY Patil Stadium, Navi Mumbai',
       status: 'completed',
       toss: { winner: teamAndheri._id, decision: 'bowl' },
@@ -136,7 +136,7 @@ async function seedDatabase() {
       tournamentId: tournament._id,
       teamA: teamMarine._id,
       teamB: teamShivaji._id,
-      date: new Date('2025-03-12'),
+      date: new Date('2026-03-12'),
       venue: 'Brabourne Stadium, Mumbai',
       status: 'completed',
       toss: { winner: teamMarine._id, decision: 'bat' },
@@ -153,7 +153,7 @@ async function seedDatabase() {
       tournamentId: tournament._id,
       teamA: teamAndheri._id,
       teamB: teamBandra._id,
-      date: new Date('2025-03-16'),
+      date: new Date('2026-03-16'),
       venue: 'Wankhede Stadium, Mumbai',
       status: 'completed',
       toss: { winner: teamBandra._id, decision: 'bowl' },
@@ -212,24 +212,24 @@ async function seedDatabase() {
     // 8. Populate PlayerMatchStat historical records (for Recharts form & ML features)
     const statsRecords = [
       // Rohit Varma recent matches
-      { playerId: playerMap['Rohit Varma']._id, matchId: match1._id, tournamentId: tournament._id, teamId: teamBandra._id, oppositionTeamId: teamMarine._id, matchDate: new Date('2025-03-05'), venue: 'Wankhede Stadium, Mumbai', batting: { runs: 74, ballsFaced: 48, fours: 7, sixes: 4, strikeRate: 154.17 }, bowling: { overs: 0, ballsBowled: 0, runsConceded: 0, wickets: 0 }, isPlayerOfMatch: true },
-      { playerId: playerMap['Rohit Varma']._id, matchId: match4._id, tournamentId: tournament._id, teamId: teamBandra._id, oppositionTeamId: teamAndheri._id, matchDate: new Date('2025-03-16'), venue: 'Wankhede Stadium, Mumbai', batting: { runs: 56, ballsFaced: 36, fours: 6, sixes: 2, strikeRate: 155.56 }, bowling: { overs: 0, ballsBowled: 0, runsConceded: 0, wickets: 0 }, isPlayerOfMatch: false },
+      { playerId: playerMap['Rohit Varma']._id, matchId: match1._id, tournamentId: tournament._id, teamId: teamBandra._id, oppositionTeamId: teamMarine._id, matchDate: new Date('2026-03-05'), venue: 'Wankhede Stadium, Mumbai', batting: { runs: 74, ballsFaced: 48, fours: 7, sixes: 4, strikeRate: 154.17 }, bowling: { overs: 0, ballsBowled: 0, runsConceded: 0, wickets: 0 }, isPlayerOfMatch: true },
+      { playerId: playerMap['Rohit Varma']._id, matchId: match4._id, tournamentId: tournament._id, teamId: teamBandra._id, oppositionTeamId: teamAndheri._id, matchDate: new Date('2026-03-16'), venue: 'Wankhede Stadium, Mumbai', batting: { runs: 56, ballsFaced: 36, fours: 6, sixes: 2, strikeRate: 155.56 }, bowling: { overs: 0, ballsBowled: 0, runsConceded: 0, wickets: 0 }, isPlayerOfMatch: false },
       
       // Vikram Kohli recent matches
-      { playerId: playerMap['Vikram Kohli']._id, matchId: match1._id, tournamentId: tournament._id, teamId: teamMarine._id, oppositionTeamId: teamBandra._id, matchDate: new Date('2025-03-05'), venue: 'Wankhede Stadium, Mumbai', batting: { runs: 62, ballsFaced: 44, fours: 5, sixes: 2, strikeRate: 140.91 }, bowling: { overs: 0, ballsBowled: 0, runsConceded: 0, wickets: 0 }, isPlayerOfMatch: false },
-      { playerId: playerMap['Vikram Kohli']._id, matchId: match3._id, tournamentId: tournament._id, teamId: teamMarine._id, oppositionTeamId: teamShivaji._id, matchDate: new Date('2025-03-12'), venue: 'Brabourne Stadium, Mumbai', batting: { runs: 82, ballsFaced: 52, fours: 8, sixes: 3, strikeRate: 157.69 }, bowling: { overs: 0, ballsBowled: 0, runsConceded: 0, wickets: 0 }, isPlayerOfMatch: false },
+      { playerId: playerMap['Vikram Kohli']._id, matchId: match1._id, tournamentId: tournament._id, teamId: teamMarine._id, oppositionTeamId: teamBandra._id, matchDate: new Date('2026-03-05'), venue: 'Wankhede Stadium, Mumbai', batting: { runs: 62, ballsFaced: 44, fours: 5, sixes: 2, strikeRate: 140.91 }, bowling: { overs: 0, ballsBowled: 0, runsConceded: 0, wickets: 0 }, isPlayerOfMatch: false },
+      { playerId: playerMap['Vikram Kohli']._id, matchId: match3._id, tournamentId: tournament._id, teamId: teamMarine._id, oppositionTeamId: teamShivaji._id, matchDate: new Date('2026-03-12'), venue: 'Brabourne Stadium, Mumbai', batting: { runs: 82, ballsFaced: 52, fours: 8, sixes: 3, strikeRate: 157.69 }, bowling: { overs: 0, ballsBowled: 0, runsConceded: 0, wickets: 0 }, isPlayerOfMatch: false },
 
       // Surya Pratap Yadav recent matches
-      { playerId: playerMap['Surya Pratap Yadav']._id, matchId: match2._id, tournamentId: tournament._id, teamId: teamShivaji._id, oppositionTeamId: teamAndheri._id, matchDate: new Date('2025-03-08'), venue: 'DY Patil Stadium, Navi Mumbai', batting: { runs: 88, ballsFaced: 42, fours: 9, sixes: 5, strikeRate: 209.52 }, bowling: { overs: 0, ballsBowled: 0, runsConceded: 0, wickets: 0 }, isPlayerOfMatch: false },
-      { playerId: playerMap['Surya Pratap Yadav']._id, matchId: match3._id, tournamentId: tournament._id, teamId: teamShivaji._id, oppositionTeamId: teamMarine._id, matchDate: new Date('2025-03-12'), venue: 'Brabourne Stadium, Mumbai', batting: { runs: 71, ballsFaced: 38, fours: 7, sixes: 4, strikeRate: 186.84 }, bowling: { overs: 0, ballsBowled: 0, runsConceded: 0, wickets: 0 }, isPlayerOfMatch: true },
+      { playerId: playerMap['Surya Pratap Yadav']._id, matchId: match2._id, tournamentId: tournament._id, teamId: teamShivaji._id, oppositionTeamId: teamAndheri._id, matchDate: new Date('2026-03-08'), venue: 'DY Patil Stadium, Navi Mumbai', batting: { runs: 88, ballsFaced: 42, fours: 9, sixes: 5, strikeRate: 209.52 }, bowling: { overs: 0, ballsBowled: 0, runsConceded: 0, wickets: 0 }, isPlayerOfMatch: false },
+      { playerId: playerMap['Surya Pratap Yadav']._id, matchId: match3._id, tournamentId: tournament._id, teamId: teamShivaji._id, oppositionTeamId: teamMarine._id, matchDate: new Date('2026-03-12'), venue: 'Brabourne Stadium, Mumbai', batting: { runs: 71, ballsFaced: 38, fours: 7, sixes: 4, strikeRate: 186.84 }, bowling: { overs: 0, ballsBowled: 0, runsConceded: 0, wickets: 0 }, isPlayerOfMatch: true },
 
       // Hardik Dave Pandya recent matches
-      { playerId: playerMap['Hardik Dave Pandya']._id, matchId: match2._id, tournamentId: tournament._id, teamId: teamAndheri._id, oppositionTeamId: teamShivaji._id, matchDate: new Date('2025-03-08'), venue: 'DY Patil Stadium, Navi Mumbai', batting: { runs: 52, ballsFaced: 28, fours: 4, sixes: 3, strikeRate: 185.71 }, bowling: { overs: 4, ballsBowled: 24, runsConceded: 32, wickets: 2, economyRate: 8.0 }, isPlayerOfMatch: true },
-      { playerId: playerMap['Hardik Dave Pandya']._id, matchId: match4._id, tournamentId: tournament._id, teamId: teamAndheri._id, oppositionTeamId: teamBandra._id, matchDate: new Date('2025-03-16'), venue: 'Wankhede Stadium, Mumbai', batting: { runs: 28, ballsFaced: 19, fours: 2, sixes: 1, strikeRate: 147.37 }, bowling: { overs: 4, ballsBowled: 24, runsConceded: 36, wickets: 1, economyRate: 9.0 }, isPlayerOfMatch: false },
+      { playerId: playerMap['Hardik Dave Pandya']._id, matchId: match2._id, tournamentId: tournament._id, teamId: teamAndheri._id, oppositionTeamId: teamShivaji._id, matchDate: new Date('2026-03-08'), venue: 'DY Patil Stadium, Navi Mumbai', batting: { runs: 52, ballsFaced: 28, fours: 4, sixes: 3, strikeRate: 185.71 }, bowling: { overs: 4, ballsBowled: 24, runsConceded: 32, wickets: 2, economyRate: 8.0 }, isPlayerOfMatch: true },
+      { playerId: playerMap['Hardik Dave Pandya']._id, matchId: match4._id, tournamentId: tournament._id, teamId: teamAndheri._id, oppositionTeamId: teamBandra._id, matchDate: new Date('2026-03-16'), venue: 'Wankhede Stadium, Mumbai', batting: { runs: 28, ballsFaced: 19, fours: 2, sixes: 1, strikeRate: 147.37 }, bowling: { overs: 4, ballsBowled: 24, runsConceded: 36, wickets: 1, economyRate: 9.0 }, isPlayerOfMatch: false },
 
       // Jasprit Bumrah-Shah recent matches
-      { playerId: playerMap['Jasprit Bumrah-Shah']._id, matchId: match1._id, tournamentId: tournament._id, teamId: teamBandra._id, oppositionTeamId: teamMarine._id, matchDate: new Date('2025-03-05'), venue: 'Wankhede Stadium, Mumbai', batting: { runs: 2, ballsFaced: 3 }, bowling: { overs: 4, ballsBowled: 24, maidens: 1, runsConceded: 21, wickets: 3, economyRate: 5.25 }, isPlayerOfMatch: false },
-      { playerId: playerMap['Jasprit Bumrah-Shah']._id, matchId: match4._id, tournamentId: tournament._id, teamId: teamBandra._id, oppositionTeamId: teamAndheri._id, matchDate: new Date('2025-03-16'), venue: 'Wankhede Stadium, Mumbai', batting: { runs: 0, ballsFaced: 0 }, bowling: { overs: 4, ballsBowled: 24, maidens: 0, runsConceded: 18, wickets: 4, economyRate: 4.5 }, isPlayerOfMatch: true },
+      { playerId: playerMap['Jasprit Bumrah-Shah']._id, matchId: match1._id, tournamentId: tournament._id, teamId: teamBandra._id, oppositionTeamId: teamMarine._id, matchDate: new Date('2026-03-05'), venue: 'Wankhede Stadium, Mumbai', batting: { runs: 2, ballsFaced: 3 }, bowling: { overs: 4, ballsBowled: 24, maidens: 1, runsConceded: 21, wickets: 3, economyRate: 5.25 }, isPlayerOfMatch: false },
+      { playerId: playerMap['Jasprit Bumrah-Shah']._id, matchId: match4._id, tournamentId: tournament._id, teamId: teamBandra._id, oppositionTeamId: teamAndheri._id, matchDate: new Date('2026-03-16'), venue: 'Wankhede Stadium, Mumbai', batting: { runs: 0, ballsFaced: 0 }, bowling: { overs: 4, ballsBowled: 24, maidens: 0, runsConceded: 18, wickets: 4, economyRate: 4.5 }, isPlayerOfMatch: true },
     ];
 
     for (const stat of statsRecords) {

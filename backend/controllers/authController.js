@@ -4,7 +4,7 @@ const User = require('../models/User');
 const sendTokenResponse = (user, statusCode, res) => {
   const token = jwt.sign(
     { id: user._id, role: user.role },
-    process.env.JWT_SECRET || 'supersecretcricketjwtkey2025te_aids',
+    process.env.JWT_SECRET || 'supersecretcricketjwtkey2026te_aids',
     { expiresIn: process.env.JWT_EXPIRE || '24h' }
   );
 

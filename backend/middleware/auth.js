@@ -15,7 +15,7 @@ const protect = async (req, res, next) => {
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'supersecretcricketjwtkey2025te_aids');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'supersecretcricketjwtkey2026te_aids');
     const user = await User.findById(decoded.id);
     if (!user) {
       return res.status(401).json({ success: false, message: 'User belonging to this token no longer exists' });

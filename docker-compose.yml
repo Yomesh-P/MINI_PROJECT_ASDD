@@ -33,7 +33,7 @@ services:
       - NODE_ENV=production
       - PORT=5000
       - MONGO_URI=mongodb://mongo:27017/cricket_tracker
-      - JWT_SECRET=supersecretcricketjwtkey2025te_aids
+      - JWT_SECRET=supersecretcricketjwtkey2026te_aids
       - JWT_EXPIRE=24h
       - ML_SERVICE_URL=http://ml-api:8000
     depends_on:

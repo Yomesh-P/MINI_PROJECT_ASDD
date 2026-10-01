@@ -62,7 +62,7 @@ with DAG(
     default_args=default_args,
     description="Automated weekly model retraining and MLflow promotion DAG (LO5)",
     schedule_interval="0 2 * * 0",  # Every Sunday at 2:00 AM
-    start_date=datetime(2025, 1, 1),
+    start_date=datetime(2026, 1, 1),
     catchup=False,
     tags=["mlops", "cricket-tracker", "te-aids", "lo5"],
 ) as dag:
