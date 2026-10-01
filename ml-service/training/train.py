@@ -1,4 +1,14 @@
 import os
+import sys
+
+# Configure UTF-8 for Windows console emojis (MLflow runner emoji)
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 import argparse
 import joblib
 import numpy as np
@@ -137,11 +147,21 @@ def train_and_evaluate(register_model=False):
             "pom_accuracy": pom_acc,
             "pom_f1": pom_f1,
         })
-        # Log artifacts
-        mlflow.sklearn.log_model(runs_regressor, "runs_model")
-        mlflow.sklearn.log_model(pom_classifier, "pom_model")
+        # Log artifacts and register in MLflow Model Registry
+        mlflow.sklearn.log_model(
+            runs_regressor, 
+            "runs_model", 
+            serialization_format=mlflow.sklearn.SERIALIZATION_FORMAT_CLOUDPICKLE,
+            registered_model_name="cricket_runs_predictor"
+        )
+        mlflow.sklearn.log_model(
+            pom_classifier, 
+            "pom_model", 
+            serialization_format=mlflow.sklearn.SERIALIZATION_FORMAT_CLOUDPICKLE,
+            registered_model_name="cricket_pom_classifier"
+        )
         mlflow.end_run()
-        print("[MLflow] Successfully logged params, metrics, and models to MLflow")
+        print("[MLflow] Successfully logged params, metrics, and models to MLflow Model Registry")
 
     # 6. Save Model Artifacts for FastAPI Microservice
     runs_path = os.path.join(MODEL_DIR, "runs_model.joblib")
