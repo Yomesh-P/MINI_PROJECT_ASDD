@@ -7,7 +7,7 @@ scrape_configs:
   - job_name: 'cricket-backend'
     metrics_path: '/metrics'
     static_configs:
-      - targets: ['backend:5000', 'localhost:5000']
+      - targets: ['backend:5000', 'host.docker.internal:5000']
         labels:
           service: 'express-backend'
           environment: 'production'
@@ -16,7 +16,7 @@ scrape_configs:
   - job_name: 'cricket-ml-service'
     metrics_path: '/metrics'
     static_configs:
-      - targets: ['ml-api:8000', 'localhost:8000']
+      - targets: ['ml-api:8000', 'host.docker.internal:8000']
         labels:
           service: 'fastapi-ml'
           environment: 'production'
