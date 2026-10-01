@@ -79,7 +79,7 @@ chmod +x run.sh
 | 3 | **Express API Gateway** | [http://localhost:5000](http://localhost:5000) | REST API Gateway. Browsing to `/` auto-redirects to port 3000. | None (Public API) |
 | 4 | **FastAPI Swagger Docs** | [http://localhost:8000/docs](http://localhost:8000/docs) | Interactive OpenAPI testing for `/predict/runs` and `/predict/pom` (LO5). | None (Interactive) |
 | 5 | **MLflow Model Registry** | [http://localhost:5001](http://localhost:5001) | MLOps experiment tracking, parameters, metrics (MAE, R²), and artifact storage (LO5). | Public Dashboard |
-| 6 | **Apache Airflow Web UI** | [http://localhost:8080](http://localhost:8080) | Weekly automated model retraining DAG (`retrain_cricket_model`) & scheduler (LO5). | Auto-generated / admin |
+| 6 | **Apache Airflow Web UI** | [http://localhost:8080](http://localhost:8080) | Weekly automated model retraining DAG (`retrain_cricket_model`) & scheduler (LO5). | `admin` / `admin` |
 | 7 | **Grafana Observability** | [http://localhost:3001](http://localhost:3001) | Live visual monitoring for API latency, request rates, error rates, and CPU/RAM (Exp 8). | `admin` / `admin` |
 | 8 | **Prometheus Metrics** | [http://localhost:9090](http://localhost:9090) | Time-series metrics engine, target health (`/targets`), and PromQL queries (Exp 8). | Public Interface |
 | 9 | **Backend Health Probe** | [http://localhost:5000/health](http://localhost:5000/health) | Kubernetes Liveness & Readiness probe JSON output. | Public Endpoint |

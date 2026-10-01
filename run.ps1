@@ -34,7 +34,7 @@ function Show-Dashboards {
     Write-Host "|    - Health Check Probe        | http://localhost:5000/health                            |"
     Write-Host "| 3. FastAPI ML Microservice     | http://localhost:8000/docs | Interactive Swagger OpenAPI |"
     Write-Host "| 4. MLflow Model Registry (LO5) | http://localhost:5001      | Model Lineage & Metrics     |"
-    Write-Host "| 5. Apache Airflow UI (LO5)     | http://localhost:8080      | Retraining DAG Scheduler    |"
+    Write-Host "| 5. Apache Airflow UI (LO5)     | http://localhost:8080      | User: admin | Pass: admin   |"
     Write-Host "| 6. Grafana Analytics (Exp 8)   | http://localhost:3001      | User: admin | Pass: admin   |"
     Write-Host "| 7. Prometheus Metrics (Exp 8)  | http://localhost:9090      | PromQL & Target Health      |"
     Write-Host "| 8. MongoDB Database Engine     | localhost:27017            | Database: cricket_tracker   |"

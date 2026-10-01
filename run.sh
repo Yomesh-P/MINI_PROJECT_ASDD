@@ -45,7 +45,7 @@ print_dashboards() {
   echo -e "| 3. FastAPI ML Microservice     | ${CYAN}http://localhost:8000/docs${NC} | Interactive Swagger OpenAPI |"
   echo -e "|    - Alternative Docs (ReDoc)  | ${CYAN}http://localhost:8000/redoc${NC}                            |"
   echo -e "| 4. MLflow Model Registry (LO5) | ${CYAN}http://localhost:5001${NC}      | Model Lineage & Metrics     |"
-  echo -e "| 5. Apache Airflow UI (LO5)     | ${CYAN}http://localhost:8080${NC}      | Retraining DAG Scheduler    |"
+  echo -e "| 5. Apache Airflow UI (LO5)     | ${CYAN}http://localhost:8080${NC}      | User: admin | Pass: admin   |"
   echo -e "| 6. Grafana Analytics (Exp 8)   | ${CYAN}http://localhost:3001${NC}      | User: admin | Pass: admin   |"
   echo -e "| 7. Prometheus Metrics (Exp 8)  | ${CYAN}http://localhost:9090${NC}      | PromQL & Target Health      |"
   echo -e "| 8. MongoDB Database Engine     | ${CYAN}localhost:27017${NC}            | Database: cricket_tracker   |"
