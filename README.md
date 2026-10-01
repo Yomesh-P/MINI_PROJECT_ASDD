@@ -32,35 +32,58 @@ Prometheus scrapes /metrics --> Grafana Live Dashboards
 
 | Layer | Technologies |
 |-------|--------------|
-| **Frontend** | React 18, Recharts, Axios, Vanilla CSS Glassmorphism Design System |
+| **Frontend** | React 18, Recharts, Axios, Vanilla CSS Pure White Claymorphism Design System |
 | **Backend** | Node.js, Express, Mongoose, JWT, bcryptjs, prom-client |
 | **Database** | MongoDB 7.0 (with compound indexes & NRR aggregation pipeline) |
 | **Machine Learning** | Python 3.12, FastAPI, Scikit-learn, Pandas, NumPy, Joblib |
 | **MLOps (LO5)** | MLflow (tracking + model registry), Apache Airflow (scheduled retraining DAG) |
-| **Containerization (LO4)**| Docker (multi-stage builds), Docker Compose |
+| **Containerization (LO4)**| Docker (multi-stage builds), Docker Compose (8 linked microservices) |
 | **Orchestration (LO4)** | Kubernetes (K3s single-node cluster on AWS EC2) |
 | **CI/CD (LO3)** | Jenkins Declarative Pipeline + GitHub Actions |
 | **Configuration / IaC** | Ansible (idempotent EC2 provisioning playbook) |
-| **Monitoring (LO5)** | Prometheus (15s scrape interval), Grafana preconfigured dashboards |
+| **Monitoring (LO5 & Exp 8)** | Prometheus (15s scrape interval), Grafana preconfigured dashboards |
 
 ---
 
-## 🚀 3. Quickstart Guide
+## ⚡ 3. Single-Attempt Run (`run.sh` / `run.ps1`)
 
-### Option A: Running with Docker Compose (Recommended)
-Clone the repository and launch the full multi-service stack with a single command:
+Run the entire platform in a **single command** with auto-detection of Docker or local Node.js:
+
+### On Linux / macOS / WSL / Git Bash:
 ```bash
-# 1. Start all 6 microservices
-docker compose up --build
+chmod +x run.sh
+./run.sh
 ```
-| Service | URL | Description |
-|---------|-----|-------------|
-| **React Web App** | [http://localhost:3000](http://localhost:3000) | Live Scorecards, Standings, Player Charts |
-| **Backend REST API** | [http://localhost:5000](http://localhost:5000) | Express REST endpoints |
-| **Backend Metrics** | [http://localhost:5000/metrics](http://localhost:5000/metrics) | Prometheus metrics endpoint |
-| **FastAPI ML Docs** | [http://localhost:8000/docs](http://localhost:8000/docs) | Swagger / OpenAPI interface |
-| **MLflow UI** | [http://localhost:5001](http://localhost:5001) | Model registry & experiment tracking |
-| **Airflow Web UI** | [http://localhost:8080](http://localhost:8080) | Retraining DAG scheduler |
+
+### On Windows PowerShell:
+```powershell
+.\run.ps1
+```
+
+### Useful Commands:
+```bash
+./run.sh --seed     # Re-seed the MongoDB database with 2026 matches
+./run.sh --logs     # Stream live logs from all containers
+./run.sh --status   # Check status and health of all microservices
+./run.sh --down     # Stop and clean up all running containers
+```
+
+---
+
+## 📊 4. Master Directory of All Dashboards & Endpoints
+
+| # | Dashboard / Service | URL / Port | Purpose & Lab Alignment | Default Credentials |
+|---|---------------------|------------|-------------------------|---------------------|
+| 1 | **React Web Application** | [http://localhost:3000](http://localhost:3000) | **White Claymorphism UI:** Live scorecard, NRR standings, player form, ML forecast. | Public Access |
+| 2 | **Admin Scoring Console** | [http://localhost:3000](http://localhost:3000) *(Admin Tab)* | Ball-by-ball live scoring console (+1, +4, +6, Wicket, Innings switch). | `admin@cricket.org` / `admin123` |
+| 3 | **Express API Gateway** | [http://localhost:5000](http://localhost:5000) | REST API Gateway. Browsing to `/` auto-redirects to port 3000. | None (Public API) |
+| 4 | **FastAPI Swagger Docs** | [http://localhost:8000/docs](http://localhost:8000/docs) | Interactive OpenAPI testing for `/predict/runs` and `/predict/pom` (LO5). | None (Interactive) |
+| 5 | **MLflow Model Registry** | [http://localhost:5001](http://localhost:5001) | MLOps experiment tracking, parameters, metrics (MAE, R²), and artifact storage (LO5). | Public Dashboard |
+| 6 | **Apache Airflow Web UI** | [http://localhost:8080](http://localhost:8080) | Weekly automated model retraining DAG (`retrain_cricket_model`) & scheduler (LO5). | Auto-generated / admin |
+| 7 | **Grafana Observability** | [http://localhost:3001](http://localhost:3001) | Live visual monitoring for API latency, request rates, error rates, and CPU/RAM (Exp 8). | `admin` / `admin` |
+| 8 | **Prometheus Metrics** | [http://localhost:9090](http://localhost:9090) | Time-series metrics engine, target health (`/targets`), and PromQL queries (Exp 8). | Public Interface |
+| 9 | **Backend Health Probe** | [http://localhost:5000/health](http://localhost:5000/health) | Kubernetes Liveness & Readiness probe JSON output. | Public Endpoint |
+| 10| **Prometheus Raw Metrics**| [http://localhost:5000/metrics](http://localhost:5000/metrics) | Prom-client raw scraping endpoint. | Public Endpoint |
 
 ---
 
