@@ -9,6 +9,8 @@ import PredictionsPage from './pages/PredictionsPage';
 import AdminPage from './pages/AdminPage';
 import LoginPage from './pages/LoginPage';
 
+import Footer from './components/Footer';
+
 function MainApp() {
   const [activeTab, setActiveTab] = useState('live');
 
@@ -26,19 +28,7 @@ function MainApp() {
         {activeTab === 'login' && <LoginPage onLoginSuccess={() => setActiveTab('admin')} />}
       </main>
 
-      <footer className="clay-footer">
-        <div className="clay-footer-inner">
-          <div style={{ fontWeight: 700, color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-            <span style={{ fontSize: '1.25rem' }}>🏏</span>
-            <span><strong>Smart Cricket Tournament Tracker</strong> • White Claymorphism Edition</span>
-          </div>
-          <div style={{ display: 'flex', gap: '1.5rem', fontSize: '0.84rem', flexWrap: 'wrap' }}>
-            <span>DevOps: Git • Docker • K3s • Jenkins • Ansible</span>
-            <span>MLOps: FastAPI • MLflow • Airflow</span>
-            <span>Metrics: Prometheus • Grafana</span>
-          </div>
-        </div>
-      </footer>
+      <Footer setActiveTab={setActiveTab} />
     </div>
   );
 }

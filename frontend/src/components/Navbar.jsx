@@ -18,7 +18,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
       <div className="nav-inner">
         <div className="nav-brand" onClick={() => setActiveTab('live')}>
           <span>🏏 Smart Cricket Tracker</span>
-          <span className="nav-brand-badge">DevOps & MLOps</span>
+          <span className="nav-brand-badge">2026 Season</span>
         </div>
 
         <nav className="nav-links">
