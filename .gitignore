@@ -1,32 +1,51 @@
-# Dependencies
+# Dependencies (Wildcard for all directories and subprojects)
 node_modules/
+**/node_modules/
+**/node_modules/**
+backend/node_modules/
+frontend/node_modules/
+
+# Python Virtual Environments & Caches
 __pycache__/
+**/__pycache__/
 *.py[cod]
 *$py.class
-.venv
+.venv/
+**/.venv/
 env/
+**/env/
 venv/
+**/venv/
 
 # Environment files
 .env
-.env.local
-.env.production
+.env.*
+!.env.example
+*.env
 
 # Build outputs
 dist/
+**/dist/
+**/dist/**
 build/
+**/build/
 .cache/
+frontend/dist/
 
 # Test and Coverage
 coverage/
+**/coverage/
 .pytest_cache/
 *.log
 
 # MLflow and Airflow local runs
 mlruns/
+**/mlruns/
 airflow/logs/
 airflow/airflow.db
 
-# OS Files
+# OS & IDE Files
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
