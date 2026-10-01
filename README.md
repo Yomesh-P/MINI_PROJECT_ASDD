@@ -106,7 +106,18 @@ python -m uvicorn app.main:app --port 8000 --reload
 | **8** | Application Monitoring | LO5 | Prometheus scraping `/metrics` every 15s + Grafana dashboard plotting requests/min, p95 latency, pod CPU/RAM |
 | **9** | Agile lifecycle using Jira with DevOps integration | LO1 | Jira Scrum board, 2-week sprints, user stories (`CRIC-1` to `CRIC-19`), Fibonacci story points, GitHub linking |
 | **10**| End-to-end DevOps mini project | LO6 | Complete live demonstration: Jira ticket $\rightarrow$ Git branch $\rightarrow$ Automated CI $\rightarrow$ CD $\rightarrow$ K3s $\rightarrow$ Grafana |
-| **11-12**| Theory Assignments 1 & 2 | - | Comprehensive design documentation (`PRD.md`, `ARCHITECTURE.md`, `WORKFLOW.md`, `SCHEMAS.md`, `JIRA_BACKLOG.md`) |
+| **11-12**| Theory Assignments 1 & 2 | - | Comprehensive design documentation ([docs/PRD.md](docs/PRD.md), [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/WORKFLOW.md](docs/WORKFLOW.md), [docs/SCHEMAS.md](docs/SCHEMAS.md), [docs/JIRA_BACKLOG.md](docs/JIRA_BACKLOG.md)) |
+
+---
+
+## 📚 Documentation Directory (`docs/`)
+
+All architectural and lab documentation has been consolidated into the [`docs/`](docs/) directory:
+- 📄 [docs/PRD.md](docs/PRD.md): Product Requirements Document with Apache Airflow & GitHub Actions.
+- 📐 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): Multi-layer system architecture, Docker, K3s, and MLOps topologies.
+- 🔄 [docs/WORKFLOW.md](docs/WORKFLOW.md): End-to-end Git, CI/CD, and MLOps retraining workflows.
+- 🗄️ [docs/SCHEMAS.md](docs/SCHEMAS.md): Complete MongoDB Mongoose schemas, compound indexes, and NRR aggregation.
+- 📋 [docs/JIRA_BACKLOG.md](docs/JIRA_BACKLOG.md): Full Agile backlog with Epics, Sprints 0–6, user stories, and acceptance criteria.
 
 ---
 
